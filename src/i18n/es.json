@@ -1,0 +1,52 @@
+{
+  "lang": {
+    "name": "Español",
+    "switchTo": "en",
+    "switchLabel": "English",
+    "switchHint": "Switch to English"
+  },
+  "theme": {
+    "dark": "Modo oscuro"
+  },
+  "nav": {
+    "label": "Principal",
+    "home": "Inicio",
+    "missions": "Misiones",
+    "families": "Familias",
+    "partners": "Colaboradores",
+    "tools": "Herramientas",
+    "safety": "Seguridad"
+  },
+  "cami": {
+    "alt": "Cami, la guía del programa"
+  },
+  "missions": {
+    "weeks": "Semanas {from}–{to}",
+    "powerPhrase": "Frase clave",
+    "techSkill": "Habilidad tecnológica",
+    "session": "Sesión",
+    "focus": "Tema",
+    "words": "Palabras",
+    "activity": "Actividad",
+    "digital": "Momento digital",
+    "none": "Ninguno",
+    "allWords": "Todas las palabras del programa",
+    "minutes": "{n} min"
+  },
+  "tools": {
+    "tool": "Herramienta",
+    "usedFor": "Para qué la usamos",
+    "whoUses": "Quién la usa",
+    "account": "Cuenta",
+    "accountNone": "Ninguna",
+    "accountHost": "Solo el anfitrión",
+    "accountTeam": "Equipo del programa",
+    "opensNewTab": "se abre en una pestaña nueva"
+  },
+  "footer": {
+    "draft": "Paso a Paso es un borrador. Los nombres, fechas y detalles pueden cambiar antes del primer periodo."
+  },
+  "app": {
+    "loadError": "Algo salió mal al cargar la página. Por favor, vuelve a cargarla."
+  }
+}

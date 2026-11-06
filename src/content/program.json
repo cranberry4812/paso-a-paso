@@ -1,0 +1,420 @@
+{
+  "version": "2026-11-06",
+  "sessionSteps": [
+    { "minutes": 3, "name": { "en": "Hello song", "es": "Canción de saludo" } },
+    { "minutes": 4, "name": { "en": "New words", "es": "Palabras nuevas" } },
+    { "minutes": 12, "name": { "en": "Activity with Cami", "es": "Actividad con Cami" } },
+    { "minutes": 4, "name": { "en": "Digital moment", "es": "Momento digital" } },
+    { "minutes": 2, "name": { "en": "Goodbye song", "es": "Canción de despedida" } }
+  ],
+  "screenNote": {
+    "en": "Hands-on first. Screen activities last 5 minutes at most, always with an adult nearby.",
+    "es": "Primero, actividades con las manos. Las actividades con pantalla duran 5 minutos como máximo, siempre con un adulto cerca."
+  },
+  "tools": [
+    {
+      "id": "meet-zoom",
+      "name": "Google Meet / Zoom",
+      "url": null,
+      "account": "host",
+      "use": { "en": "Live sessions", "es": "Sesiones en vivo" },
+      "who": { "en": "Everyone joins by link", "es": "Todos entran con un enlace" }
+    },
+    {
+      "id": "scratchjr",
+      "name": "ScratchJr",
+      "url": "https://www.scratchjr.org/",
+      "account": "none",
+      "use": { "en": "Moving stories and first coding steps", "es": "Cuentos en movimiento y primeros pasos de programación" },
+      "who": { "en": "Children, with an adult", "es": "Niños, con un adulto" }
+    },
+    {
+      "id": "chrome-music-lab",
+      "name": "Chrome Music Lab",
+      "url": "https://musiclab.chromeexperiments.com/",
+      "account": "none",
+      "use": { "en": "Rhythms and simple songs", "es": "Ritmos y canciones sencillas" },
+      "who": { "en": "Children, with an adult", "es": "Niños, con un adulto" }
+    },
+    {
+      "id": "song-maker",
+      "name": "Chrome Music Lab Song Maker",
+      "url": "https://musiclab.chromeexperiments.com/Song-Maker/",
+      "account": "none",
+      "use": { "en": "Building a beat pattern", "es": "Armar un patrón de ritmo" },
+      "who": { "en": "Children, with an adult", "es": "Niños, con un adulto" }
+    },
+    {
+      "id": "code-org-unplugged",
+      "name": "Code.org unplugged lessons",
+      "url": "https://code.org/curriculum/unplugged",
+      "account": "none",
+      "use": { "en": "Screen-free sequencing activities", "es": "Actividades de secuencias sin pantalla" },
+      "who": { "en": "Co-facilitators", "es": "Cofacilitadores" }
+    },
+    {
+      "id": "canva",
+      "name": "Canva",
+      "url": null,
+      "account": "team",
+      "use": { "en": "Picture cards, posters, certificates", "es": "Tarjetas con imágenes, carteles, certificados" },
+      "who": { "en": "Program team", "es": "Equipo del programa" }
+    },
+    {
+      "id": "google-workspace",
+      "name": "Google Sites, Forms, Drive",
+      "url": null,
+      "account": "team",
+      "use": { "en": "Platform pages, feedback, materials", "es": "Páginas de la plataforma, opiniones, materiales" },
+      "who": { "en": "Program team", "es": "Equipo del programa" }
+    }
+  ],
+  "missions": [
+    {
+      "id": 1,
+      "weeks": [1, 3],
+      "title": { "en": "Cami builds a home", "es": "Cami construye una casa" },
+      "summary": { "en": "Shapes, building parts and sizes.", "es": "Figuras, partes de una casa y tamaños." },
+      "powerPhrase": { "en": "This is my house.", "es": "Esta es mi casa." },
+      "techSkill": { "en": "following steps in order", "es": "seguir pasos en orden" },
+      "codesigner": { "en": "Co-designed by an architect", "es": "Codiseñada con un arquitecto" },
+      "sessions": [
+        {
+          "code": "1A", "order": 1,
+          "focus": { "en": "Shapes", "es": "Figuras" },
+          "words": [
+            { "en": "square", "es": "cuadrado" },
+            { "en": "triangle", "es": "triángulo" },
+            { "en": "circle", "es": "círculo" }
+          ],
+          "activity": { "en": "Sort blocks by shape", "es": "Clasificar bloques por figura" },
+          "digital": { "en": "Shape-matching game", "es": "Juego de emparejar figuras" },
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "1B", "order": 2,
+          "focus": { "en": "Following steps", "es": "Seguir pasos" },
+          "words": [
+            { "en": "first", "es": "primero" },
+            { "en": "then", "es": "luego" },
+            { "en": "next", "es": "después" }
+          ],
+          "activity": { "en": "Build a shape robot from step cards", "es": "Construir un robot de figuras con tarjetas de pasos" },
+          "digital": { "en": "ScratchJr, adult-guided", "es": "ScratchJr, guiado por un adulto" },
+          "tools": ["scratchjr"],
+          "parentSteps": []
+        },
+        {
+          "code": "2A", "order": 3,
+          "focus": { "en": "Parts of a house", "es": "Partes de una casa" },
+          "words": [
+            { "en": "roof", "es": "techo" },
+            { "en": "door", "es": "puerta" },
+            { "en": "window", "es": "ventana" },
+            { "en": "wall", "es": "pared" }
+          ],
+          "activity": { "en": "Point to parts in photos of homes from different countries", "es": "Señalar las partes en fotos de casas de distintos países" },
+          "digital": { "en": "Photo slideshow", "es": "Presentación de fotos" },
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "2B", "order": 4,
+          "focus": { "en": "Labeling", "es": "Etiquetar" },
+          "words": [
+            { "en": "floor", "es": "piso" },
+            { "en": "house", "es": "casa" }
+          ],
+          "activity": { "en": "Label a house drawing", "es": "Etiquetar el dibujo de una casa" },
+          "digital": { "en": "Drag-and-drop labels", "es": "Etiquetas para arrastrar y soltar" },
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "3A", "order": 5,
+          "focus": { "en": "Size and position", "es": "Tamaño y posición" },
+          "words": [
+            { "en": "big", "es": "grande" },
+            { "en": "small", "es": "pequeño" },
+            { "en": "tall", "es": "alto" },
+            { "en": "next to", "es": "al lado de" }
+          ],
+          "activity": { "en": "Build a tower and describe it", "es": "Construir una torre y describirla" },
+          "digital": null,
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "3B", "order": 6,
+          "focus": { "en": "Home showcase", "es": "Muestra de la casa" },
+          "words": [
+            { "en": "This is my house.", "es": "Esta es mi casa.", "phrase": true }
+          ],
+          "activity": { "en": "Show a home to family", "es": "Mostrar una casa a la familia" },
+          "digital": { "en": "Drawing app", "es": "Aplicación de dibujo" },
+          "tools": [],
+          "parentSteps": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "weeks": [4, 6],
+      "title": { "en": "Cami checks her friends", "es": "Cami revisa a sus amigos" },
+      "summary": { "en": "Body parts, feelings and healthy habits.", "es": "Partes del cuerpo, emociones y hábitos saludables." },
+      "powerPhrase": { "en": "I am healthy.", "es": "Estoy sano." },
+      "techSkill": { "en": "sorting and categories", "es": "clasificar en categorías" },
+      "codesigner": { "en": "Co-designed by a doctor", "es": "Codiseñada con un médico" },
+      "sessions": [
+        {
+          "code": "4A", "order": 7,
+          "focus": { "en": "Body parts", "es": "Partes del cuerpo" },
+          "words": [
+            { "en": "head", "es": "cabeza" },
+            { "en": "arm", "es": "brazo" },
+            { "en": "leg", "es": "pierna" },
+            { "en": "hand", "es": "mano" }
+          ],
+          "activity": { "en": "\"Touch your nose\" game", "es": "Juego \"Toca tu nariz\"" },
+          "digital": { "en": "Body-part song", "es": "Canción de las partes del cuerpo" },
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "4B", "order": 8,
+          "focus": { "en": "My face", "es": "Mi cara" },
+          "words": [
+            { "en": "eyes", "es": "ojos" },
+            { "en": "ears", "es": "orejas" },
+            { "en": "nose", "es": "nariz" },
+            { "en": "mouth", "es": "boca" }
+          ],
+          "activity": { "en": "Sing and point", "es": "Cantar y señalar" },
+          "digital": null,
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "5A", "order": 9,
+          "focus": { "en": "Check-up play", "es": "Jugar al chequeo médico" },
+          "words": [
+            { "en": "sick", "es": "enfermo" },
+            { "en": "healthy", "es": "sano" },
+            { "en": "listen", "es": "escuchar" },
+            { "en": "look", "es": "mirar" }
+          ],
+          "activity": { "en": "Check up a stuffed animal", "es": "Revisar a un peluche" },
+          "digital": null,
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "5B", "order": 10,
+          "focus": { "en": "Feelings", "es": "Emociones" },
+          "words": [
+            { "en": "happy", "es": "feliz" },
+            { "en": "sad", "es": "triste" },
+            { "en": "tired", "es": "cansado" }
+          ],
+          "activity": { "en": "Feelings faces game", "es": "Juego de caras y emociones" },
+          "digital": { "en": "Sort-the-body-parts game", "es": "Juego de clasificar partes del cuerpo" },
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "6A", "order": 11,
+          "focus": { "en": "Healthy habits", "es": "Hábitos saludables" },
+          "words": [
+            { "en": "wash hands", "es": "lavarse las manos" },
+            { "en": "drink water", "es": "tomar agua" },
+            { "en": "sleep", "es": "dormir" }
+          ],
+          "activity": { "en": "Sort healthy and unhealthy picture cards", "es": "Clasificar tarjetas de hábitos saludables y no saludables" },
+          "digital": { "en": "Picture slideshow", "es": "Presentación de imágenes" },
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "6B", "order": 12,
+          "focus": { "en": "Habits showcase", "es": "Muestra de hábitos" },
+          "words": [
+            { "en": "eat fruit", "es": "comer fruta" },
+            { "en": "I am healthy.", "es": "Estoy sano.", "phrase": true }
+          ],
+          "activity": { "en": "Draw a healthy-habits poster", "es": "Dibujar un cartel de hábitos saludables" },
+          "digital": { "en": "Drawing app", "es": "Aplicación de dibujo" },
+          "tools": [],
+          "parentSteps": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "weeks": [7, 9],
+      "title": { "en": "Cami makes music", "es": "Cami hace música" },
+      "summary": { "en": "Rhythm, counting, patterns and a first song.", "es": "Ritmo, conteo, patrones y una primera canción." },
+      "powerPhrase": { "en": "Listen to the beat.", "es": "Escucha el ritmo." },
+      "techSkill": { "en": "patterns and loops", "es": "patrones y repeticiones" },
+      "codesigner": { "en": "Co-designed by a music producer", "es": "Codiseñada con un productor musical" },
+      "sessions": [
+        {
+          "code": "7A", "order": 13,
+          "focus": { "en": "Rhythm", "es": "Ritmo" },
+          "words": [
+            { "en": "clap", "es": "aplaudir" },
+            { "en": "tap", "es": "tocar" },
+            { "en": "loud", "es": "fuerte" },
+            { "en": "quiet", "es": "suave" }
+          ],
+          "activity": { "en": "Body percussion", "es": "Percusión corporal" },
+          "digital": null,
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "7B", "order": 14,
+          "focus": { "en": "Patterns", "es": "Patrones" },
+          "words": [
+            { "en": "repeat", "es": "repetir" },
+            { "en": "again", "es": "otra vez" }
+          ],
+          "activity": { "en": "Echo rhythms with pattern cards", "es": "Repetir ritmos con tarjetas de patrones" },
+          "digital": null,
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "8A", "order": 15,
+          "focus": { "en": "Counting beats", "es": "Contar tiempos" },
+          "words": [
+            { "en": "one to five", "es": "uno a cinco" },
+            { "en": "drum", "es": "tambor" }
+          ],
+          "activity": { "en": "Make drums from pots and boxes", "es": "Hacer tambores con ollas y cajas" },
+          "digital": { "en": "Chrome Music Lab", "es": "Chrome Music Lab" },
+          "tools": ["chrome-music-lab"],
+          "parentSteps": []
+        },
+        {
+          "code": "8B", "order": 16,
+          "focus": { "en": "Make a beat", "es": "Crear un ritmo" },
+          "words": [
+            { "en": "fast", "es": "rápido" },
+            { "en": "slow", "es": "lento" },
+            { "en": "beat", "es": "ritmo" }
+          ],
+          "activity": { "en": "Build a 4-beat pattern", "es": "Armar un patrón de 4 tiempos" },
+          "digital": { "en": "Chrome Music Lab Song Maker", "es": "Song Maker de Chrome Music Lab" },
+          "tools": ["song-maker"],
+          "parentSteps": []
+        },
+        {
+          "code": "9A", "order": 17,
+          "focus": { "en": "Our song", "es": "Nuestra canción" },
+          "words": [
+            { "en": "sing", "es": "cantar" },
+            { "en": "dance", "es": "bailar" }
+          ],
+          "activity": { "en": "Learn the chorus", "es": "Aprender el coro" },
+          "digital": { "en": "Play along with the song template", "es": "Tocar junto con la plantilla de la canción" },
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "9B", "order": 18,
+          "focus": { "en": "Song showcase", "es": "Muestra musical" },
+          "words": [
+            { "en": "Listen to the beat.", "es": "Escucha el ritmo.", "phrase": true }
+          ],
+          "activity": { "en": "Perform for family", "es": "Presentarse ante la familia" },
+          "digital": null,
+          "tools": [],
+          "parentSteps": []
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "weeks": [10, 12],
+      "title": { "en": "Cami tells a story", "es": "Cami cuenta un cuento" },
+      "summary": { "en": "Characters, feelings and story order.", "es": "Personajes, emociones y el orden de un cuento." },
+      "powerPhrase": { "en": "First, then, next, the end.", "es": "Primero, luego, después, el final." },
+      "techSkill": { "en": "cause and effect, event order", "es": "causa y efecto, orden de los sucesos" },
+      "codesigner": { "en": "Co-designed by a storyteller", "es": "Codiseñada con un cuentacuentos" },
+      "sessions": [
+        {
+          "code": "10A", "order": 19,
+          "focus": { "en": "Characters", "es": "Personajes" },
+          "words": [
+            { "en": "cat", "es": "gato" },
+            { "en": "dog", "es": "perro" },
+            { "en": "bird", "es": "pájaro" }
+          ],
+          "activity": { "en": "Draw a character", "es": "Dibujar un personaje" },
+          "digital": { "en": "Drawing app", "es": "Aplicación de dibujo" },
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "10B", "order": 20,
+          "focus": { "en": "How they feel", "es": "Cómo se sienten" },
+          "words": [
+            { "en": "happy", "es": "feliz" },
+            { "en": "sad", "es": "triste" },
+            { "en": "scared", "es": "asustado" }
+          ],
+          "activity": { "en": "Act out a character's feelings", "es": "Actuar las emociones de un personaje" },
+          "digital": null,
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "11A", "order": 21,
+          "focus": { "en": "Story order", "es": "El orden del cuento" },
+          "words": [
+            { "en": "first", "es": "primero" },
+            { "en": "then", "es": "luego" },
+            { "en": "the end", "es": "el final" }
+          ],
+          "activity": { "en": "Put story cards in order", "es": "Ordenar las tarjetas del cuento" },
+          "digital": null,
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "11B", "order": 22,
+          "focus": { "en": "A moving story", "es": "Un cuento en movimiento" },
+          "words": [
+            { "en": "story", "es": "cuento" },
+            { "en": "move", "es": "mover" }
+          ],
+          "activity": { "en": "Make the character move", "es": "Hacer que el personaje se mueva" },
+          "digital": { "en": "ScratchJr, adult-guided", "es": "ScratchJr, guiado por un adulto" },
+          "tools": ["scratchjr"],
+          "parentSteps": []
+        },
+        {
+          "code": "12A", "order": 23,
+          "focus": { "en": "Rehearsal", "es": "Ensayo" },
+          "words": [],
+          "reviewAllWords": true,
+          "activity": { "en": "Practice telling the story", "es": "Practicar cómo contar el cuento" },
+          "digital": null,
+          "tools": [],
+          "parentSteps": []
+        },
+        {
+          "code": "12B", "order": 24,
+          "focus": { "en": "Family festival", "es": "Festival familiar" },
+          "words": [],
+          "reviewAllWords": true,
+          "activity": { "en": "Share stories, receive certificates", "es": "Compartir cuentos y recibir certificados" },
+          "digital": { "en": "Video call with families", "es": "Videollamada con las familias" },
+          "tools": ["meet-zoom"],
+          "parentSteps": []
+        }
+      ]
+    }
+  ]
+}

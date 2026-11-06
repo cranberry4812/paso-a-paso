@@ -8,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "check:contrast": "node scripts/check-contrast.js"
+    "check:contrast": "node scripts/check-contrast.js",
+    "check:content": "node scripts/check-content.js",
+    "check": "npm run check:contrast && npm run check:content && npm run build"
   },
   "engines": {
     "node": ">=22"

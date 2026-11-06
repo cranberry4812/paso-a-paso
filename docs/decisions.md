@@ -35,3 +35,29 @@ Every package we add is listed here with its reason.
   never on the server. With no choice saved, the app follows the phone's setting.
 - **No inline scripts or styles**, so the Content-Security-Policy in Step 4
   can forbid them.
+
+## 2026-11-06: Content and languages (Step 2)
+
+- **Two content files.** `content/program.json` holds the curriculum (missions,
+  sessions, words, tools), which the parent area will reuse. `content/pages.json`
+  holds the public page text. Interface text (buttons, labels) is in
+  `i18n/en.json` and `i18n/es.json`.
+- **Every text is `{ "en": ..., "es": ... }`.** `npm run check:content` fails if
+  either language is missing or empty.
+- **Content is plain text only, never HTML.** Links are separate fields
+  (`{ "href", "label" }`). Pages are built with `h()` in `lib/dom.js`, which turns
+  text into text nodes, so content can never inject code (XSS).
+- **Sessions keep the prototype codes (1A–12B)** plus an `order` from 1 to 24,
+  which the unlock rule will use in Step 9.
+- **`parentSteps` is empty for now.** The prototype has no detailed parent
+  instructions per session; they can be added later without code changes.
+- **Language choice:** saved choice on the device, then the phone's language,
+  then English. A signed-in parent's `preferred_language` will take over in Step 7.
+- **Words and power phrases are always shown in English with Spanish**, whatever
+  the interface language, because the English is what children learn.
+- **Spanish translations are drafts** and need review by a native speaker from
+  the target countries before launch.
+- **Kept from the prototype for now; to decide before launch:** the Tools page
+  still lists "Google Sites" for platform pages (this platform replaces it), and
+  the Safety page says the consent form is "kept by the partner organization"
+  (online consent replaces it in Step 7).

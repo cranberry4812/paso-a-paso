@@ -1,0 +1,255 @@
+{
+  "home": {
+    "eyebrow": { "en": "English + early technology · Ages 4 to 7 · Online", "es": "Inglés + tecnología temprana · De 4 a 7 años · En línea" },
+    "title": { "en": "Learn step by step, with Cami", "es": "Aprende paso a paso, con Cami" },
+    "lede": {
+      "en": "Paso a Paso is a free online program for Spanish-speaking children. In 12 weeks, they learn English words, build early technology skills, and discover what architects, doctors, musicians and storytellers do.",
+      "es": "Paso a Paso es un programa gratuito en línea para niños hispanohablantes. En 12 semanas aprenden palabras en inglés, desarrollan sus primeras habilidades tecnológicas y descubren lo que hacen los arquitectos, médicos, músicos y cuentacuentos."
+    },
+    "ctaPartners": { "en": "Become a partner", "es": "Colabora con nosotros" },
+    "ctaFamilies": { "en": "Why it's good for families", "es": "Por qué es bueno para tu familia" },
+    "missionsTitle": { "en": "Four missions, one guide", "es": "Cuatro misiones, una guía" },
+    "missionsIntro": {
+      "en": "Cami goes on a new mission every three weeks. Each mission is designed with a volunteer professional and ends with a small showcase for families.",
+      "es": "Cami empieza una nueva misión cada tres semanas. Cada misión se diseña con un profesional voluntario y termina con una pequeña muestra para las familias."
+    },
+    "seeAll": { "en": "See every session and word list →", "es": "Ver todas las sesiones y palabras →" },
+    "glanceTitle": { "en": "At a glance", "es": "De un vistazo" },
+    "glance": [
+      { "label": { "en": "Ages", "es": "Edades" }, "value": { "en": "4 to 7 (a track for ages 8 to 10 is planned later)", "es": "De 4 a 7 años (más adelante habrá un grupo de 8 a 10 años)" } },
+      { "label": { "en": "Length", "es": "Duración" }, "value": { "en": "12 weeks, 24 sessions", "es": "12 semanas, 24 sesiones" } },
+      { "label": { "en": "Sessions", "es": "Sesiones" }, "value": { "en": "2 per week, 25 minutes each, live online", "es": "2 por semana, de 25 minutos cada una, en vivo y en línea" } },
+      { "label": { "en": "Group size", "es": "Tamaño del grupo" }, "value": { "en": "12 to 15 children, 2 co-facilitators", "es": "De 12 a 15 niños, 2 cofacilitadores" } },
+      { "label": { "en": "Languages", "es": "Idiomas" }, "value": { "en": "English leads, Spanish supports. The ratio adapts to each group.", "es": "El inglés guía y el español apoya. La proporción se adapta a cada grupo." } },
+      { "label": { "en": "Cost to families", "es": "Costo para las familias" }, "value": { "en": "Free or very low cost", "es": "Gratis o de muy bajo costo" } },
+      { "label": { "en": "Status", "es": "Estado" }, "value": { "en": "Draft. Recruiting partners for a pilot in January 2027.", "es": "Borrador. Buscamos colaboradores para un piloto en enero de 2027." } }
+    ]
+  },
+
+  "missions": {
+    "eyebrow": { "en": "Curriculum", "es": "Plan de estudios" },
+    "title": { "en": "Missions and sessions", "es": "Misiones y sesiones" },
+    "lede": {
+      "en": "Every session follows the same five steps, so children always know what comes next.",
+      "es": "Cada sesión sigue los mismos cinco pasos, para que los niños siempre sepan qué viene después."
+    }
+  },
+
+  "families": {
+    "eyebrow": { "en": "For parents and caregivers", "es": "Para madres, padres y cuidadores" },
+    "title": { "en": "Why Paso a Paso is good for your child", "es": "Por qué Paso a Paso es bueno para tu hijo o hija" },
+    "lede": {
+      "en": "Short, playful sessions in English, with Spanish support so the whole family can take part.",
+      "es": "Sesiones cortas y divertidas en inglés, con apoyo en español para que toda la familia participe."
+    },
+    "benefits": [
+      {
+        "title": { "en": "English early, the easy way", "es": "Inglés desde pequeños, de forma fácil" },
+        "body": { "en": "Young children pick up new sounds and words quickly. Songs, games and one power phrase per mission make English feel like play.", "es": "Los niños pequeños aprenden sonidos y palabras nuevas muy rápido. Las canciones, los juegos y una frase clave por misión hacen que el inglés se sienta como un juego." }
+      },
+      {
+        "title": { "en": "Parents can follow along", "es": "Las familias pueden acompañar" },
+        "body": { "en": "Every word is shown in English and Spanish, so you can practice at home even if you're still learning English yourself.", "es": "Cada palabra aparece en inglés y en español, para que puedas practicar en casa aunque tú también estés aprendiendo inglés." }
+      },
+      {
+        "title": { "en": "The first steps of coding", "es": "Los primeros pasos de la programación" },
+        "body": { "en": "Children practice putting steps in order, spotting patterns and repeating loops. These are the ideas behind coding, learned with blocks, drums and story cards.", "es": "Los niños practican ordenar pasos, encontrar patrones y repetir secuencias. Son las ideas detrás de la programación, aprendidas con bloques, tambores y tarjetas de cuentos." }
+      },
+      {
+        "title": { "en": "Little screen time", "es": "Poco tiempo de pantalla" },
+        "body": { "en": "Hands-on activities come first. Screen activities last 5 minutes at most per session, always with an adult nearby.", "es": "Primero van las actividades con las manos. Las actividades con pantalla duran 5 minutos como máximo por sesión, siempre con un adulto cerca." }
+      },
+      {
+        "title": { "en": "Designed by professionals", "es": "Diseñado por profesionales" },
+        "body": { "en": "Architects, doctors, music producers and storytellers help design each mission, so children see real jobs they could have one day.", "es": "Arquitectos, médicos, productores musicales y cuentacuentos ayudan a diseñar cada misión, para que los niños conozcan trabajos reales que podrían tener algún día." }
+      },
+      {
+        "title": { "en": "Made for little attention spans", "es": "Pensado para la atención de los más pequeños" },
+        "body": { "en": "Sessions are 25 minutes, twice a week, and follow the same five steps every time, so children always know what comes next.", "es": "Las sesiones duran 25 minutos, dos veces por semana, y siempre siguen los mismos cinco pasos, para que los niños sepan qué viene después." }
+      },
+      {
+        "title": { "en": "Confidence and pride", "es": "Confianza y orgullo" },
+        "body": { "en": "Each mission ends with a small showcase for the family. At the end of the program, every child gets a certificate.", "es": "Cada misión termina con una pequeña muestra para la familia. Al final del programa, cada niño recibe un certificado." }
+      },
+      {
+        "title": { "en": "Free, and from home", "es": "Gratis y desde casa" },
+        "body": { "en": "No travel and no special equipment. Most materials are things you already have at home.", "es": "Sin traslados ni equipos especiales. La mayoría de los materiales son cosas que ya tienes en casa." }
+      },
+      {
+        "title": { "en": "Safe by design", "es": "Seguro desde el diseño" },
+        "body": { "en": "No accounts for children, very little personal information, and a co-facilitator in every session.", "es": "Los niños no tienen cuentas, pedimos muy poca información personal y hay un cofacilitador en cada sesión." },
+        "link": { "href": "#safety", "label": { "en": "Read how we keep children safe", "es": "Lee cómo cuidamos a los niños" } }
+      }
+    ],
+    "needsTitle": { "en": "What your family needs", "es": "Lo que tu familia necesita" },
+    "needs": [
+      { "en": "A phone, tablet or computer with a camera and internet connection", "es": "Un teléfono, tableta o computadora con cámara y conexión a internet" },
+      { "en": "An adult nearby during sessions (required for ages 4 and 5)", "es": "Un adulto cerca durante las sesiones (obligatorio para niños de 4 y 5 años)" },
+      { "en": "Blocks or small boxes, paper and crayons", "es": "Bloques o cajitas, papel y crayones" },
+      { "en": "A stuffed animal (for the doctor mission)", "es": "Un peluche (para la misión del médico)" },
+      { "en": "A pot, box or plastic container to use as a drum", "es": "Una olla, caja o recipiente de plástico para usar como tambor" }
+    ],
+    "weakInternet": {
+      "title": { "en": "Weak internet?", "es": "¿Internet débil?" },
+      "body": { "en": "Each session has an offline version of the activity, so children can still take part if the connection drops.", "es": "Cada sesión tiene una versión de la actividad sin conexión, para que los niños puedan seguir participando si se cae el internet." }
+    }
+  },
+
+  "partners": {
+    "eyebrow": { "en": "Volunteer partners", "es": "Colaboradores voluntarios" },
+    "title": { "en": "Help design a mission", "es": "Ayúdanos a diseñar una misión" },
+    "lede": {
+      "en": "We're looking for volunteer professionals to co-design the activities for one mission. You don't need to teach or appear on camera, though you're welcome to join a session live.",
+      "es": "Buscamos profesionales voluntarios para codiseñar las actividades de una misión. No necesitas enseñar ni aparecer en cámara, aunque eres bienvenido a unirte a una sesión en vivo."
+    },
+    "howTitle": { "en": "How co-design works", "es": "Cómo funciona el codiseño" },
+    "how": [
+      { "en": "You receive a one-page design brief", "es": "Recibes una guía de diseño de una página" },
+      { "en": "You draft the activities and word list for your field", "es": "Preparas un borrador de actividades y palabras de tu área" },
+      { "en": "The program lead adapts them to be bilingual and age-appropriate", "es": "La coordinación del programa los adapta para que sean bilingües y apropiados para la edad" },
+      { "en": "You review the final version", "es": "Revisas la versión final" },
+      { "en": "We run it and send you the families' feedback", "es": "La llevamos a cabo y te enviamos las opiniones de las familias" }
+    ],
+    "rolesTitle": { "en": "Roles we need", "es": "Roles que necesitamos" },
+    "roles": [
+      {
+        "mission": 1,
+        "title": { "en": "Architect", "es": "Arquitecto/a" },
+        "time": { "en": "About 6–8 hours per term", "es": "Unas 6–8 horas por periodo" },
+        "tasks": [
+          { "en": "Building activities and step cards", "es": "Actividades de construcción y tarjetas de pasos" },
+          { "en": "8–10 photos of homes and buildings with parts labeled", "es": "8–10 fotos de casas y edificios con sus partes señaladas" },
+          { "en": "Review of the home vocabulary", "es": "Revisión del vocabulario de la casa" },
+          { "en": "Written feedback on children's home designs", "es": "Comentarios por escrito sobre los diseños de casas de los niños" }
+        ]
+      },
+      {
+        "mission": 2,
+        "title": { "en": "Doctor", "es": "Médico/a" },
+        "time": { "en": "About 5–6 hours per term", "es": "Unas 5–6 horas por periodo" },
+        "tasks": [
+          { "en": "Healthy-habits content for ages 4 to 7", "es": "Contenido sobre hábitos saludables para niños de 4 a 7 años" },
+          { "en": "Check-up play script for the stuffed-animal game", "es": "Guion del juego de chequeo médico con peluches" },
+          { "en": "Accuracy review of body and health words", "es": "Revisión de las palabras del cuerpo y la salud" },
+          { "en": "Health education only. No advice to individual families.", "es": "Solo educación para la salud. Sin consejos médicos a familias en particular." }
+        ]
+      },
+      {
+        "mission": 3,
+        "title": { "en": "Music producer", "es": "Productor/a musical" },
+        "time": { "en": "About 6–8 hours per term", "es": "Unas 6–8 horas por periodo" },
+        "tasks": [
+          { "en": "Rhythm and pattern games", "es": "Juegos de ritmo y patrones" },
+          { "en": "A 4-beat song template children can play along with", "es": "Una plantilla de canción de 4 tiempos para tocar junto a los niños" },
+          { "en": "Choice of sounds for the digital activities", "es": "Selección de sonidos para las actividades digitales" }
+        ]
+      },
+      {
+        "mission": 4,
+        "title": { "en": "Storyteller", "es": "Cuentacuentos" },
+        "time": { "en": "About 4–6 hours per term", "es": "Unas 4–6 horas por periodo" },
+        "tasks": [
+          { "en": "6–8 story cards in English and Spanish", "es": "6–8 tarjetas de cuento en inglés y en español" },
+          { "en": "Characters and simple plots for ages 4 to 7", "es": "Personajes e historias sencillas para niños de 4 a 7 años" },
+          { "en": "Help judging the family festival", "es": "Ayuda como jurado en el festival familiar" }
+        ]
+      }
+    ],
+    "otherTitle": { "en": "Other volunteer roles", "es": "Otros roles voluntarios" },
+    "other": [
+      {
+        "role": { "en": "Co-facilitator", "es": "Cofacilitador/a" },
+        "does": { "en": "Runs sessions with the program lead. Must be fluent in English and Spanish.", "es": "Dirige las sesiones junto con la coordinación. Debe hablar inglés y español con fluidez." },
+        "time": { "en": "About 2 hours a week", "es": "Unas 2 horas por semana" }
+      },
+      {
+        "role": { "en": "Child development advisor", "es": "Asesor/a en desarrollo infantil" },
+        "does": { "en": "Reviews activities, timing and the safeguarding policy", "es": "Revisa las actividades, los tiempos y la política de protección infantil" },
+        "time": { "en": "A few hours per term", "es": "Algunas horas por periodo" }
+      },
+      {
+        "role": { "en": "Family liaison", "es": "Enlace con las familias" },
+        "does": { "en": "A parent who gathers feedback and helps with showcases", "es": "Una madre o padre que reúne opiniones y ayuda con las muestras" },
+        "time": { "en": "About 1 hour a week", "es": "Aproximadamente 1 hora por semana" }
+      },
+      {
+        "role": { "en": "Partner organization", "es": "Organización aliada" },
+        "does": { "en": "A school, library or nonprofit that invites families and keeps the contact list", "es": "Una escuela, biblioteca u organización sin fines de lucro que invita a las familias y guarda la lista de contactos" },
+        "time": { "en": "Set together", "es": "Se acuerda en conjunto" }
+      }
+    ],
+    "benefitsTitle": { "en": "What partners get", "es": "Lo que reciben los colaboradores" },
+    "benefits": [
+      { "en": "A letter confirming your volunteer contribution", "es": "Una carta que confirma tu trabajo voluntario" },
+      { "en": "Credit on the mission page (only if you agree)", "es": "Reconocimiento en la página de la misión (solo si lo autorizas)" },
+      { "en": "Feedback and showcase highlights from families", "es": "Opiniones y momentos destacados de las muestras de las familias" },
+      { "en": "A flexible role you can do from anywhere, on your own schedule", "es": "Un rol flexible que puedes hacer desde cualquier lugar y en tu propio horario" }
+    ],
+    "timelineTitle": { "en": "Timeline", "es": "Calendario" },
+    "timeline": [
+      { "when": { "en": "Nov 2026", "es": "Nov. 2026" }, "what": { "en": "Finalize the plan and invite partners", "es": "Terminar el plan e invitar a colaboradores" } },
+      { "when": { "en": "Dec 2026", "es": "Dic. 2026" }, "what": { "en": "Partners draft their mission. Safeguarding policy and consent forms ready.", "es": "Los colaboradores preparan su misión. Política de protección infantil y formularios de consentimiento listos." } },
+      { "when": { "en": "Jan 2027", "es": "Ene. 2027" }, "what": { "en": "Pilot with 6 children: 4 sessions of Mission 1", "es": "Piloto con 6 niños: 4 sesiones de la Misión 1" } },
+      { "when": { "en": "Feb–Apr 2027", "es": "Feb.–abr. 2027" }, "what": { "en": "First full 12-week term", "es": "Primer periodo completo de 12 semanas" } },
+      { "when": { "en": "May 2027", "es": "May. 2027" }, "what": { "en": "Results, feedback to partners and plans for the next term", "es": "Resultados, comentarios a los colaboradores y planes para el siguiente periodo" } }
+    ],
+    "contact": {
+      "title": { "en": "Interested?", "es": "¿Te interesa?" },
+      "body": { "en": "Contact the program lead directly to receive the design brief for your field. Volunteers who work directly with children complete a background check before sessions start.", "es": "Escribe directamente a la coordinación del programa para recibir la guía de diseño de tu área. Los voluntarios que trabajan directamente con niños pasan una verificación de antecedentes antes de empezar." }
+    }
+  },
+
+  "tools": {
+    "eyebrow": { "en": "Free tools", "es": "Herramientas gratuitas" },
+    "title": { "en": "Tools we use", "es": "Herramientas que usamos" },
+    "lede": {
+      "en": "All tools are free. Children never create accounts. Where a tool needs an account, an adult in the program holds it.",
+      "es": "Todas las herramientas son gratuitas. Los niños nunca crean cuentas. Cuando una herramienta necesita una cuenta, la tiene un adulto del programa."
+    },
+    "note": {
+      "en": "Account rules can change, so we check each tool again before every term.",
+      "es": "Las reglas de las cuentas pueden cambiar, así que revisamos cada herramienta antes de cada periodo."
+    }
+  },
+
+  "safety": {
+    "eyebrow": { "en": "Safety and privacy", "es": "Seguridad y privacidad" },
+    "title": { "en": "How we keep children safe", "es": "Cómo cuidamos a los niños" },
+    "cards": [
+      {
+        "title": { "en": "In every session", "es": "En cada sesión" },
+        "style": "checks",
+        "items": [
+          { "en": "A co-facilitator is always present", "es": "Siempre hay un cofacilitador presente" },
+          { "en": "No private one-on-one contact between adults and children", "es": "Ningún contacto privado a solas entre adultos y niños" },
+          { "en": "Waiting room and passcode on every call", "es": "Sala de espera y contraseña en cada videollamada" },
+          { "en": "An adult nearby for children ages 4 and 5", "es": "Un adulto cerca para los niños de 4 y 5 años" },
+          { "en": "Partners never contact children directly", "es": "Los colaboradores nunca contactan directamente a los niños" }
+        ]
+      },
+      {
+        "title": { "en": "What we collect", "es": "Lo que recopilamos" },
+        "style": "checks",
+        "items": [
+          { "en": "Child's first name or nickname", "es": "El nombre de pila o apodo del niño" },
+          { "en": "Age group (4–5 or 6–7)", "es": "Grupo de edad (4–5 o 6–7)" },
+          { "en": "A signed consent form, kept by the partner organization", "es": "Un formulario de consentimiento firmado, que guarda la organización aliada" }
+        ]
+      },
+      {
+        "title": { "en": "What we never collect", "es": "Lo que nunca recopilamos" },
+        "style": "no",
+        "items": [
+          { "en": "Last names, birthdates or addresses", "es": "Apellidos, fechas de nacimiento ni direcciones" },
+          { "en": "School names", "es": "Nombres de escuelas" },
+          { "en": "Children's accounts on any tool", "es": "Cuentas de niños en ninguna herramienta" },
+          { "en": "Photos or recordings without written consent", "es": "Fotos ni grabaciones sin consentimiento por escrito" }
+        ]
+      }
+    ],
+    "callout": {
+      "en": "Everyone who works directly with children completes a background check. A written safeguarding policy, reviewed by a child development professional, will be shared with families before the first session.",
+      "es": "Todas las personas que trabajan directamente con niños pasan una verificación de antecedentes. Antes de la primera sesión compartiremos con las familias una política de protección infantil por escrito, revisada por un profesional en desarrollo infantil."
+    }
+  }
+}

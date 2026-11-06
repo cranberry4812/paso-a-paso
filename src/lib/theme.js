@@ -34,8 +34,10 @@ function updateButton(button) {
   const dark = currentTheme() === 'dark';
   // aria-pressed tells screen readers whether "Dark mode" is on.
   button.setAttribute('aria-pressed', String(dark));
-  button.querySelector('.icon-moon').hidden = dark;
-  button.querySelector('.icon-sun').hidden = !dark;
+  // toggleAttribute (not .hidden = ...) because the icons are SVG drawings,
+  // and the .hidden shortcut only works on HTML elements.
+  button.querySelector('.icon-moon').toggleAttribute('hidden', dark);
+  button.querySelector('.icon-sun').toggleAttribute('hidden', !dark);
 }
 
 /** Connects a <button> to the theme switch. */

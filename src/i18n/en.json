@@ -1,0 +1,52 @@
+{
+  "lang": {
+    "name": "English",
+    "switchTo": "es",
+    "switchLabel": "Español",
+    "switchHint": "Cambiar a español"
+  },
+  "theme": {
+    "dark": "Dark mode"
+  },
+  "nav": {
+    "label": "Main",
+    "home": "Home",
+    "missions": "Missions",
+    "families": "Families",
+    "partners": "Partners",
+    "tools": "Tools",
+    "safety": "Safety"
+  },
+  "cami": {
+    "alt": "Cami, the program's guide"
+  },
+  "missions": {
+    "weeks": "Weeks {from}–{to}",
+    "powerPhrase": "Power phrase",
+    "techSkill": "Tech skill",
+    "session": "Session",
+    "focus": "Focus",
+    "words": "Words",
+    "activity": "Activity",
+    "digital": "Digital moment",
+    "none": "None",
+    "allWords": "All program words",
+    "minutes": "{n} min"
+  },
+  "tools": {
+    "tool": "Tool",
+    "usedFor": "Used for",
+    "whoUses": "Who uses it",
+    "account": "Account",
+    "accountNone": "None",
+    "accountHost": "Host only",
+    "accountTeam": "Program team",
+    "opensNewTab": "opens in a new tab"
+  },
+  "footer": {
+    "draft": "Paso a Paso is a working draft. Names, dates and details may change before the first term."
+  },
+  "app": {
+    "loadError": "Something went wrong while loading the page. Please reload."
+  }
+}

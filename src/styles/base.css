@@ -65,6 +65,9 @@ a:hover { text-decoration-thickness: 2px; }
   outline-offset: 2px;
 }
 
+/* Browsers only hide HTML elements with [hidden]; this also hides SVG drawings. */
+[hidden] { display: none !important; }
+
 /* Hidden visually, still read by screen readers. */
 .visually-hidden {
   position: absolute;
