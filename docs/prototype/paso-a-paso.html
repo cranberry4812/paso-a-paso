@@ -1,0 +1,446 @@
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>Paso a Paso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito:wght@400;600;700;800&display=swap">
+<style>
+/* Layout: sticky top nav, one view at a time (hash-routed), single reading column with card grids */
+:root {
+  --bg: #fbf8f2;
+  --surface: #ffffff;
+  --fg: #22303a;
+  --muted: #5b6b76;
+  --accent: #c9541f;
+  --accent-soft: #fde6d9;
+  --teal: #1f7a74;
+  --teal-soft: #dcf0ed;
+  --line: #e7e0d4;
+  --display: "Fredoka", "Nunito", system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14191e; --surface: #1d242b; --fg: #eef1f3; --muted: #a7b3bc;
+    --accent: #f08a57; --accent-soft: #3a2a20; --teal: #6cc7bd; --teal-soft: #193532;
+    --line: #2c353d; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #14191e; --surface: #1d242b; --fg: #eef1f3; --muted: #a7b3bc;
+  --accent: #f08a57; --accent-soft: #3a2a20; --teal: #6cc7bd; --teal-soft: #193532;
+  --line: #2c353d; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body); }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+.wrap { max-width: 920px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--surface); border-bottom: 1px solid var(--line); }
+header.site .wrap { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; padding-block: 10px; }
+.brand { font-family: var(--display); font-weight: 600; font-size: 1.3rem; color: var(--accent); text-decoration: none; }
+nav { display: flex; flex-wrap: wrap; gap: 4px; }
+nav a { text-decoration: none; color: var(--fg); padding: 6px 10px; border-radius: 8px; font-weight: 700; font-size: .92rem; }
+nav a:hover { background: var(--accent-soft); }
+nav a[aria-current="page"] { background: var(--accent); color: var(--surface); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
+main .wrap { padding-block: 28px 56px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; line-height: 1.2; text-wrap: balance; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.1rem, 6vw, 3.2rem); }
+h2 { font-size: 1.6rem; margin-top: 2.2rem; }
+h3 { font-size: 1.15rem; }
+p { max-width: 65ch; margin: 0 0 1em; }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .78rem; font-weight: 800; color: var(--teal); margin-bottom: .4em; }
+.es { color: var(--muted); font-style: italic; }
+.lede { font-size: 1.15rem; color: var(--muted); }
+.hero { display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center; }
+.hero > div { min-width: 0; }
+.cami-art { width: 150px; height: 150px; }
+@media (max-width: 600px) { .hero { grid-template-columns: 1fr; } .cami-art { width: 110px; height: 110px; order: -1; } }
+.btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+.btn { display: inline-block; text-decoration: none; font-weight: 800; padding: 10px 16px; border-radius: 10px; border: 2px solid var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--surface); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; min-width: 0; }
+.card h3 { margin-bottom: .3em; }
+.card p:last-child { margin-bottom: 0; }
+.tag { display: inline-block; background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 2px 10px; font-size: .78rem; font-weight: 800; margin-bottom: 8px; }
+.tag.teal { background: var(--teal-soft); color: var(--teal); }
+.phrase { font-weight: 800; color: var(--accent); }
+.steps { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 12px 0; list-style: none; counter-reset: s; }
+.steps li { background: var(--teal-soft); border-radius: 10px; padding: 8px 12px; font-size: .92rem; counter-increment: s; }
+.steps li::before { content: counter(s) ". "; font-weight: 800; color: var(--teal); }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); margin: 12px 0 8px; }
+table { width: 100%; border-collapse: collapse; font-size: .93rem; min-width: 560px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+th { color: var(--muted); font-weight: 800; font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; }
+.words { display: flex; flex-wrap: wrap; gap: 4px; }
+.word { background: var(--accent-soft); border-radius: 6px; padding: 1px 7px; font-size: .85rem; white-space: nowrap; }
+.word i { color: var(--muted); }
+.mission { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 20px; margin-top: 20px; }
+.mission header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; }
+.mission header > div { min-width: 0; }
+.mission .meta { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .92rem; color: var(--muted); margin: 4px 0 8px; }
+.mission .meta strong { color: var(--fg); }
+ul.checks { padding-left: 0; list-style: none; margin: 0 0 1em; }
+ul.checks li { padding-left: 26px; position: relative; margin-bottom: 6px; max-width: 65ch; }
+ul.checks li::before { content: ""; position: absolute; left: 4px; top: .5em; width: 10px; height: 10px; border-radius: 3px; background: var(--teal); }
+ul.no li::before { background: var(--accent); border-radius: 50%; }
+.yes { color: var(--teal); font-weight: 800; }
+.noacct { color: var(--teal); font-weight: 800; }
+.needacct { color: var(--accent); font-weight: 800; }
+.timeline { display: grid; gap: 10px; margin: 12px 0; }
+.tl { display: grid; grid-template-columns: 110px 1fr; gap: 12px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; }
+.tl b { color: var(--teal); font-variant-numeric: tabular-nums; }
+.tl div { min-width: 0; }
+@media (max-width: 480px) { .tl { grid-template-columns: 1fr; gap: 2px; } }
+.callout { background: var(--teal-soft); border-radius: 14px; padding: 16px 18px; margin: 16px 0; }
+.callout p:last-child { margin: 0; }
+footer.site { border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+footer.site .wrap { padding-block: 18px 28px; }
+@media (prefers-reduced-motion: no-preference) {
+  .view { animation: fade .25s ease both; }
+  @keyframes fade { from { opacity: .4; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+}
+</style>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#home">Paso a Paso</a>
+    <nav aria-label="Main">
+      <a href="#home">Home</a>
+      <a href="#missions">Missions</a>
+      <a href="#families">Families</a>
+      <a href="#partners">Partners</a>
+      <a href="#tools">Tools</a>
+      <a href="#safety">Safety</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+<!-- HOME -->
+<section class="view" id="v-home" data-view="home">
+  <div class="hero">
+    <div>
+      <p class="eyebrow">English + early technology · Ages 4 to 7 · Online</p>
+      <h1>Learn step by step, with Cami</h1>
+      <p class="lede">Paso a Paso is a free online program for Spanish-speaking children. In 12 weeks, they learn English words, build early technology skills, and discover what architects, doctors, musicians and storytellers do.</p>
+      <p class="es">Un programa gratuito en línea para niños hispanohablantes: inglés, tecnología y profesiones, paso a paso.</p>
+      <div class="btns">
+        <a class="btn primary" href="#partners">Become a partner</a>
+        <a class="btn" href="#families">Why it's good for families</a>
+      </div>
+    </div>
+    <svg class="cami-art" viewBox="0 0 120 120" role="img" aria-label="Cami, the program's guide">
+      <circle cx="60" cy="60" r="56" fill="var(--accent-soft)"/>
+      <rect x="34" y="30" width="52" height="44" rx="14" fill="var(--accent)"/>
+      <circle cx="49" cy="50" r="6" fill="var(--surface)"/>
+      <circle cx="71" cy="50" r="6" fill="var(--surface)"/>
+      <circle cx="49" cy="51" r="2.6" fill="var(--fg)"/>
+      <circle cx="71" cy="51" r="2.6" fill="var(--fg)"/>
+      <path d="M50 62 Q60 70 70 62" stroke="var(--surface)" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <rect x="44" y="76" width="32" height="22" rx="8" fill="var(--teal)"/>
+      <line x1="60" y1="30" x2="60" y2="20" stroke="var(--accent)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="60" cy="17" r="5" fill="var(--teal)"/>
+    </svg>
+  </div>
+
+  <h2>Four missions, one guide</h2>
+  <p>Cami goes on a new mission every three weeks. Each mission is designed with a volunteer professional and ends with a small showcase for families.</p>
+  <div class="grid">
+    <article class="card"><span class="tag">Weeks 1–3</span><h3>Cami builds a home</h3><p class="es">Cami construye una casa</p><p>Shapes, building parts and sizes.</p><p class="phrase">"This is my house."</p></article>
+    <article class="card"><span class="tag">Weeks 4–6</span><h3>Cami checks her friends</h3><p class="es">Cami revisa a sus amigos</p><p>Body parts, feelings and healthy habits.</p><p class="phrase">"I am healthy."</p></article>
+    <article class="card"><span class="tag">Weeks 7–9</span><h3>Cami makes music</h3><p class="es">Cami hace música</p><p>Rhythm, counting, patterns and a first song.</p><p class="phrase">"Listen to the beat."</p></article>
+    <article class="card"><span class="tag">Weeks 10–12</span><h3>Cami tells a story</h3><p class="es">Cami cuenta un cuento</p><p>Characters, feelings and story order.</p><p class="phrase">"First, then, next, the end."</p></article>
+  </div>
+  <p style="margin-top:14px"><a href="#missions">See every session and word list →</a></p>
+
+  <h2>At a glance</h2>
+  <div class="table-wrap">
+    <table>
+      <tbody>
+        <tr><th>Ages</th><td>4 to 7 (a track for ages 8 to 10 is planned later)</td></tr>
+        <tr><th>Length</th><td>12 weeks, 24 sessions</td></tr>
+        <tr><th>Sessions</th><td>2 per week, 25 minutes each, live online</td></tr>
+        <tr><th>Group size</th><td>12 to 15 children, 2 co-facilitators</td></tr>
+        <tr><th>Languages</th><td>English leads, Spanish supports. The ratio adapts to each group.</td></tr>
+        <tr><th>Cost to families</th><td>Free or very low cost</td></tr>
+        <tr><th>Status</th><td>Draft. Recruiting partners for a pilot in January 2027.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- MISSIONS -->
+<section class="view" id="v-missions" data-view="missions" hidden>
+  <p class="eyebrow">Curriculum</p>
+  <h1>Missions and sessions</h1>
+  <p class="lede">Every session follows the same five steps, so children always know what comes next.</p>
+  <ol class="steps">
+    <li>Hello song · 3 min</li>
+    <li>New words · 4 min</li>
+    <li>Activity with Cami · 12 min</li>
+    <li>Digital moment · 4 min</li>
+    <li>Goodbye song · 2 min</li>
+  </ol>
+  <p class="note es">Hands-on first. Screen activities last 5 minutes at most, always with an adult nearby.</p>
+
+  <article class="mission">
+    <header><div><span class="tag">Weeks 1–3</span><h2 style="margin-top:0">Cami builds a home</h2></div><span class="tag teal">Co-designed by an architect</span></header>
+    <div class="meta"><span>Power phrase: <strong>"This is my house."</strong> <i>/ "Esta es mi casa."</i></span><span>Tech skill: <strong>following steps in order</strong></span></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Session</th><th>Focus</th><th>Words</th><th>Activity</th><th>Digital moment</th></tr></thead>
+      <tbody>
+        <tr><td>1A</td><td>Shapes</td><td><span class="words"><span class="word">square <i>cuadrado</i></span><span class="word">triangle <i>triángulo</i></span><span class="word">circle <i>círculo</i></span></span></td><td>Sort blocks by shape</td><td>Shape-matching game</td></tr>
+        <tr><td>1B</td><td>Following steps</td><td><span class="words"><span class="word">first <i>primero</i></span><span class="word">then <i>luego</i></span><span class="word">next <i>después</i></span></span></td><td>Build a shape robot from step cards</td><td>ScratchJr, adult-guided</td></tr>
+        <tr><td>2A</td><td>Parts of a house</td><td><span class="words"><span class="word">roof <i>techo</i></span><span class="word">door <i>puerta</i></span><span class="word">window <i>ventana</i></span><span class="word">wall <i>pared</i></span></span></td><td>Point to parts in photos of homes from different countries</td><td>Photo slideshow</td></tr>
+        <tr><td>2B</td><td>Labeling</td><td><span class="words"><span class="word">floor <i>piso</i></span><span class="word">house <i>casa</i></span></span></td><td>Label a house drawing</td><td>Drag-and-drop labels</td></tr>
+        <tr><td>3A</td><td>Size and position</td><td><span class="words"><span class="word">big <i>grande</i></span><span class="word">small <i>pequeño</i></span><span class="word">tall <i>alto</i></span><span class="word">next to <i>al lado de</i></span></span></td><td>Build a tower and describe it</td><td>None</td></tr>
+        <tr><td>3B</td><td>Home showcase</td><td><span class="words"><span class="word">This is my house.</span></span></td><td>Show a home to family</td><td>Drawing app</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="mission">
+    <header><div><span class="tag">Weeks 4–6</span><h2 style="margin-top:0">Cami checks her friends</h2></div><span class="tag teal">Co-designed by a doctor</span></header>
+    <div class="meta"><span>Power phrase: <strong>"I am healthy."</strong> <i>/ "Estoy sano."</i></span><span>Tech skill: <strong>sorting and categories</strong></span></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Session</th><th>Focus</th><th>Words</th><th>Activity</th><th>Digital moment</th></tr></thead>
+      <tbody>
+        <tr><td>4A</td><td>Body parts</td><td><span class="words"><span class="word">head <i>cabeza</i></span><span class="word">arm <i>brazo</i></span><span class="word">leg <i>pierna</i></span><span class="word">hand <i>mano</i></span></span></td><td>"Touch your nose" game</td><td>Body-part song</td></tr>
+        <tr><td>4B</td><td>My face</td><td><span class="words"><span class="word">eyes <i>ojos</i></span><span class="word">ears <i>orejas</i></span><span class="word">nose <i>nariz</i></span><span class="word">mouth <i>boca</i></span></span></td><td>Sing and point</td><td>None</td></tr>
+        <tr><td>5A</td><td>Check-up play</td><td><span class="words"><span class="word">sick <i>enfermo</i></span><span class="word">healthy <i>sano</i></span><span class="word">listen <i>escuchar</i></span><span class="word">look <i>mirar</i></span></span></td><td>Check up a stuffed animal</td><td>None</td></tr>
+        <tr><td>5B</td><td>Feelings</td><td><span class="words"><span class="word">happy <i>feliz</i></span><span class="word">sad <i>triste</i></span><span class="word">tired <i>cansado</i></span></span></td><td>Feelings faces game</td><td>Sort-the-body-parts game</td></tr>
+        <tr><td>6A</td><td>Healthy habits</td><td><span class="words"><span class="word">wash hands <i>lavarse las manos</i></span><span class="word">drink water <i>tomar agua</i></span><span class="word">sleep <i>dormir</i></span></span></td><td>Sort healthy and unhealthy picture cards</td><td>Picture slideshow</td></tr>
+        <tr><td>6B</td><td>Habits showcase</td><td><span class="words"><span class="word">eat fruit <i>comer fruta</i></span><span class="word">I am healthy.</span></span></td><td>Draw a healthy-habits poster</td><td>Drawing app</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="mission">
+    <header><div><span class="tag">Weeks 7–9</span><h2 style="margin-top:0">Cami makes music</h2></div><span class="tag teal">Co-designed by a music producer</span></header>
+    <div class="meta"><span>Power phrase: <strong>"Listen to the beat."</strong> <i>/ "Escucha el ritmo."</i></span><span>Tech skill: <strong>patterns and loops</strong></span></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Session</th><th>Focus</th><th>Words</th><th>Activity</th><th>Digital moment</th></tr></thead>
+      <tbody>
+        <tr><td>7A</td><td>Rhythm</td><td><span class="words"><span class="word">clap <i>aplaudir</i></span><span class="word">tap <i>tocar</i></span><span class="word">loud <i>fuerte</i></span><span class="word">quiet <i>suave</i></span></span></td><td>Body percussion</td><td>None</td></tr>
+        <tr><td>7B</td><td>Patterns</td><td><span class="words"><span class="word">repeat <i>repetir</i></span><span class="word">again <i>otra vez</i></span></span></td><td>Echo rhythms with pattern cards</td><td>None</td></tr>
+        <tr><td>8A</td><td>Counting beats</td><td><span class="words"><span class="word">one to five <i>uno a cinco</i></span><span class="word">drum <i>tambor</i></span></span></td><td>Make drums from pots and boxes</td><td>Chrome Music Lab</td></tr>
+        <tr><td>8B</td><td>Make a beat</td><td><span class="words"><span class="word">fast <i>rápido</i></span><span class="word">slow <i>lento</i></span><span class="word">beat <i>ritmo</i></span></span></td><td>Build a 4-beat pattern</td><td>Chrome Music Lab Song Maker</td></tr>
+        <tr><td>9A</td><td>Our song</td><td><span class="words"><span class="word">sing <i>cantar</i></span><span class="word">dance <i>bailar</i></span></span></td><td>Learn the chorus</td><td>Play along with the song template</td></tr>
+        <tr><td>9B</td><td>Song showcase</td><td><span class="words"><span class="word">Listen to the beat.</span></span></td><td>Perform for family</td><td>None</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+
+  <article class="mission">
+    <header><div><span class="tag">Weeks 10–12</span><h2 style="margin-top:0">Cami tells a story</h2></div><span class="tag teal">Co-designed by a storyteller</span></header>
+    <div class="meta"><span>Power phrase: <strong>"First, then, next, the end."</strong> <i>/ "Primero, luego, después, el final."</i></span><span>Tech skill: <strong>cause and effect, event order</strong></span></div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Session</th><th>Focus</th><th>Words</th><th>Activity</th><th>Digital moment</th></tr></thead>
+      <tbody>
+        <tr><td>10A</td><td>Characters</td><td><span class="words"><span class="word">cat <i>gato</i></span><span class="word">dog <i>perro</i></span><span class="word">bird <i>pájaro</i></span></span></td><td>Draw a character</td><td>Drawing app</td></tr>
+        <tr><td>10B</td><td>How they feel</td><td><span class="words"><span class="word">happy <i>feliz</i></span><span class="word">sad <i>triste</i></span><span class="word">scared <i>asustado</i></span></span></td><td>Act out a character's feelings</td><td>None</td></tr>
+        <tr><td>11A</td><td>Story order</td><td><span class="words"><span class="word">first <i>primero</i></span><span class="word">then <i>luego</i></span><span class="word">the end <i>el final</i></span></span></td><td>Put story cards in order</td><td>None</td></tr>
+        <tr><td>11B</td><td>A moving story</td><td><span class="words"><span class="word">story <i>cuento</i></span><span class="word">move <i>mover</i></span></span></td><td>Make the character move</td><td>ScratchJr, adult-guided</td></tr>
+        <tr><td>12A</td><td>Rehearsal</td><td>All program words</td><td>Practice telling the story</td><td>None</td></tr>
+        <tr><td>12B</td><td>Family festival</td><td>All program words</td><td>Share stories, receive certificates</td><td>Video call with families</td></tr>
+      </tbody>
+    </table></div>
+  </article>
+</section>
+
+<!-- FAMILIES -->
+<section class="view" id="v-families" data-view="families" hidden>
+  <p class="eyebrow">For parents and caregivers</p>
+  <h1>Why Paso a Paso is good for your child</h1>
+  <p class="lede">Short, playful sessions in English, with Spanish support so the whole family can take part.</p>
+  <div class="grid">
+    <article class="card"><h3>English early, the easy way</h3><p>Young children pick up new sounds and words quickly. Songs, games and one power phrase per mission make English feel like play.</p></article>
+    <article class="card"><h3>Parents can follow along</h3><p>Every word is shown in English and Spanish, so you can practice at home even if you're still learning English yourself.</p></article>
+    <article class="card"><h3>The first steps of coding</h3><p>Children practice putting steps in order, spotting patterns and repeating loops. These are the ideas behind coding, learned with blocks, drums and story cards.</p></article>
+    <article class="card"><h3>Little screen time</h3><p>Hands-on activities come first. Screen activities last 5 minutes at most per session, always with an adult nearby.</p></article>
+    <article class="card"><h3>Designed by professionals</h3><p>Architects, doctors, music producers and storytellers help design each mission, so children see real jobs they could have one day.</p></article>
+    <article class="card"><h3>Made for little attention spans</h3><p>Sessions are 25 minutes, twice a week, and follow the same five steps every time, so children always know what comes next.</p></article>
+    <article class="card"><h3>Confidence and pride</h3><p>Each mission ends with a small showcase for the family. At the end of the program, every child gets a certificate.</p></article>
+    <article class="card"><h3>Free, and from home</h3><p>No travel and no special equipment. Most materials are things you already have at home.</p></article>
+    <article class="card"><h3>Safe by design</h3><p>No accounts for children, very little personal information, and a co-facilitator in every session. <a href="#safety">Read how we keep children safe</a>.</p></article>
+  </div>
+
+  <h2>What your family needs</h2>
+  <ul class="checks">
+    <li>A phone, tablet or computer with a camera and internet connection</li>
+    <li>An adult nearby during sessions (required for ages 4 and 5)</li>
+    <li>Blocks or small boxes, paper and crayons</li>
+    <li>A stuffed animal (for the doctor mission)</li>
+    <li>A pot, box or plastic container to use as a drum</li>
+  </ul>
+  <div class="callout"><p><strong>Weak internet?</strong> Each session has an offline version of the activity, so children can still take part if the connection drops.</p></div>
+</section>
+
+<!-- PARTNERS -->
+<section class="view" id="v-partners" data-view="partners" hidden>
+  <p class="eyebrow">Volunteer partners</p>
+  <h1>Help design a mission</h1>
+  <p class="lede">We're looking for volunteer professionals to co-design the activities for one mission. You don't need to teach or appear on camera, though you're welcome to join a session live.</p>
+
+  <h2>How co-design works</h2>
+  <ol class="steps">
+    <li>You receive a one-page design brief</li>
+    <li>You draft the activities and word list for your field</li>
+    <li>The program lead adapts them to be bilingual and age-appropriate</li>
+    <li>You review the final version</li>
+    <li>We run it and send you the families' feedback</li>
+  </ol>
+
+  <h2>Roles we need</h2>
+  <div class="grid">
+    <article class="card">
+      <span class="tag">Mission 1</span><h3>Architect</h3>
+      <p><strong>About 6–8 hours per term</strong></p>
+      <ul class="checks">
+        <li>Building activities and step cards</li>
+        <li>8–10 photos of homes and buildings with parts labeled</li>
+        <li>Review of the home vocabulary</li>
+        <li>Written feedback on children's home designs</li>
+      </ul>
+    </article>
+    <article class="card">
+      <span class="tag">Mission 2</span><h3>Doctor</h3>
+      <p><strong>About 5–6 hours per term</strong></p>
+      <ul class="checks">
+        <li>Healthy-habits content for ages 4 to 7</li>
+        <li>Check-up play script for the stuffed-animal game</li>
+        <li>Accuracy review of body and health words</li>
+        <li>Health education only. No advice to individual families.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <span class="tag">Mission 3</span><h3>Music producer</h3>
+      <p><strong>About 6–8 hours per term</strong></p>
+      <ul class="checks">
+        <li>Rhythm and pattern games</li>
+        <li>A 4-beat song template children can play along with</li>
+        <li>Choice of sounds for the digital activities</li>
+      </ul>
+    </article>
+    <article class="card">
+      <span class="tag">Mission 4</span><h3>Storyteller</h3>
+      <p><strong>About 4–6 hours per term</strong></p>
+      <ul class="checks">
+        <li>6–8 story cards in English and Spanish</li>
+        <li>Characters and simple plots for ages 4 to 7</li>
+        <li>Help judging the family festival</li>
+      </ul>
+    </article>
+  </div>
+
+  <h2>Other volunteer roles</h2>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Role</th><th>What they do</th><th>Time</th></tr></thead>
+    <tbody>
+      <tr><td>Co-facilitator</td><td>Runs sessions with the program lead. Must be fluent in English and Spanish.</td><td>About 2 hours a week</td></tr>
+      <tr><td>Child development advisor</td><td>Reviews activities, timing and the safeguarding policy</td><td>A few hours per term</td></tr>
+      <tr><td>Family liaison</td><td>A parent who gathers feedback and helps with showcases</td><td>About 1 hour a week</td></tr>
+      <tr><td>Partner organization</td><td>A school, library or nonprofit that invites families and keeps the contact list</td><td>Set together</td></tr>
+    </tbody>
+  </table></div>
+
+  <h2>What partners get</h2>
+  <ul class="checks">
+    <li>A letter confirming your volunteer contribution</li>
+    <li>Credit on the mission page (only if you agree)</li>
+    <li>Feedback and showcase highlights from families</li>
+    <li>A flexible role you can do from anywhere, on your own schedule</li>
+  </ul>
+
+  <h2>Timeline</h2>
+  <div class="timeline">
+    <div class="tl"><b>Nov 2026</b><div>Finalize the plan and invite partners</div></div>
+    <div class="tl"><b>Dec 2026</b><div>Partners draft their mission. Safeguarding policy and consent forms ready.</div></div>
+    <div class="tl"><b>Jan 2027</b><div>Pilot with 6 children: 4 sessions of Mission 1</div></div>
+    <div class="tl"><b>Feb–Apr 2027</b><div>First full 12-week term</div></div>
+    <div class="tl"><b>May 2027</b><div>Results, feedback to partners and plans for the next term</div></div>
+  </div>
+  <div class="callout"><p><strong>Interested?</strong> Contact the program lead directly to receive the design brief for your field. Volunteers who work directly with children complete a background check before sessions start.</p></div>
+</section>
+
+<!-- TOOLS -->
+<section class="view" id="v-tools" data-view="tools" hidden>
+  <p class="eyebrow">Free tools</p>
+  <h1>Tools we use</h1>
+  <p class="lede">All tools are free. Children never create accounts. Where a tool needs an account, an adult in the program holds it.</p>
+  <div class="table-wrap"><table>
+    <thead><tr><th>Tool</th><th>Used for</th><th>Who uses it</th><th>Account</th></tr></thead>
+    <tbody>
+      <tr><td>Google Meet or Zoom</td><td>Live sessions</td><td>Everyone joins by link</td><td><span class="needacct">Host only</span></td></tr>
+      <tr><td>ScratchJr</td><td>Moving stories and first coding steps</td><td>Children, with an adult</td><td><span class="noacct">None</span></td></tr>
+      <tr><td>Chrome Music Lab</td><td>Rhythms and simple songs</td><td>Children, with an adult</td><td><span class="noacct">None</span></td></tr>
+      <tr><td>Code.org unplugged lessons</td><td>Screen-free sequencing activities</td><td>Co-facilitators</td><td><span class="noacct">None</span></td></tr>
+      <tr><td>Canva</td><td>Picture cards, posters, certificates</td><td>Program team</td><td><span class="needacct">Program team</span></td></tr>
+      <tr><td>Google Sites, Forms, Drive</td><td>Platform pages, feedback, materials</td><td>Program team</td><td><span class="needacct">Program team</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="es">Account rules can change, so we check each tool again before every term.</p>
+</section>
+
+<!-- SAFETY -->
+<section class="view" id="v-safety" data-view="safety" hidden>
+  <p class="eyebrow">Safety and privacy</p>
+  <h1>How we keep children safe</h1>
+  <div class="grid">
+    <article class="card">
+      <h3>In every session</h3>
+      <ul class="checks">
+        <li>A co-facilitator is always present</li>
+        <li>No private one-on-one contact between adults and children</li>
+        <li>Waiting room and passcode on every call</li>
+        <li>An adult nearby for children ages 4 and 5</li>
+        <li>Partners never contact children directly</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>What we collect</h3>
+      <ul class="checks">
+        <li>Child's first name or nickname</li>
+        <li>Age group (4–5 or 6–7)</li>
+        <li>A signed consent form, kept by the partner organization</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3>What we never collect</h3>
+      <ul class="checks no">
+        <li>Last names, birthdates or addresses</li>
+        <li>School names</li>
+        <li>Children's accounts on any tool</li>
+        <li>Photos or recordings without written consent</li>
+      </ul>
+    </article>
+  </div>
+  <div class="callout"><p>Everyone who works directly with children completes a background check. A written safeguarding policy, reviewed by a child development professional, will be shared with families before the first session.</p></div>
+</section>
+
+</div>
+</main>
+
+<footer class="site"><div class="wrap">Paso a Paso is a working draft. Names, dates and details may change before the first term.</div></footer>
+
+<script>
+(function () {
+  var views = ["home", "missions", "families", "partners", "tools", "safety"];
+  function show() {
+    var h = (location.hash || "").replace("#", "");
+    if (views.indexOf(h) === -1) h = "home";
+    document.querySelectorAll("[data-view]").forEach(function (v) { v.hidden = v.getAttribute("data-view") !== h; });
+    document.querySelectorAll("nav a").forEach(function (a) {
+      if (a.getAttribute("href") === "#" + h) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener("hashchange", show);
+  show();
+})();
+</script>

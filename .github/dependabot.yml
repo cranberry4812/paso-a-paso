@@ -1,0 +1,13 @@
+# Dependabot checks our packages every week and opens a pull request
+# when an update (especially a security fix) is available.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly

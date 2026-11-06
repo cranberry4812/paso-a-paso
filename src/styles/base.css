@@ -1,0 +1,49 @@
+/* Temporary starter styles. In Step 1 these colors move into tokens.css
+   together with the rest of the design from the prototype. */
+:root {
+  --bg: #fbf8f2;
+  --surface: #ffffff;
+  --fg: #22303a;
+  --muted: #5b6b76;
+  --accent: #c9541f;
+  --accent-soft: #fde6d9;
+  --teal: #1f7a74;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14191e;
+    --surface: #1d242b;
+    --fg: #eef1f3;
+    --muted: #a7b3bc;
+    --accent: #f08a57;
+    --accent-soft: #3a2a20;
+    --teal: #6cc7bd;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.wrap {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 40px max(16px, env(safe-area-inset-left, 0px));
+  text-align: center;
+}
+
+.cami { width: 140px; height: 140px; }
+
+h1 { color: var(--accent); margin: 12px 0 0; }
+
+.es { color: var(--muted); font-style: italic; margin-top: 0; }
+
+.status { font-weight: 700; color: var(--muted); }
+.status.ok { color: var(--teal); }
