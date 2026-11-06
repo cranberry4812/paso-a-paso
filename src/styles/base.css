@@ -49,10 +49,10 @@ a {
   color: var(--link);
   font-weight: 800;
   text-decoration-color: var(--link-line);
-  text-decoration-thickness: 3px;
+  text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
-a:hover { text-decoration-thickness: 5px; }
+a:hover { text-decoration-thickness: 3px; }
 
 .eyebrow {
   display: inline-block;
@@ -85,14 +85,14 @@ a:hover { text-decoration-thickness: 5px; }
   white-space: nowrap;
 }
 
-/* ---------- Header: sunshine yellow with a thick ink line ---------- */
+/* ---------- Header: soft sunshine yellow with a thin line ---------- */
 header.site {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
   z-index: 5;
   background: var(--header-bg);
   color: var(--ink);
-  border-bottom: var(--border-w) solid var(--ink);
+  border-bottom: var(--border-w) solid var(--outline);
 }
 header.site .wrap {
   display: flex;
@@ -110,6 +110,68 @@ header.site .wrap {
   text-decoration: none;
   margin-right: auto; /* pushes the buttons to the right */
 }
+
+/* ---------- Skip link: hidden until a keyboard user tabs to it ---------- */
+.skip-link {
+  position: absolute;
+  left: 12px;
+  top: -100px;
+  z-index: 20;
+  padding: 10px 16px;
+  background: var(--white);
+  color: var(--ink);
+  border: var(--border-w) solid var(--outline);
+  border-radius: var(--radius-m);
+}
+.skip-link:focus { top: 12px; }
+
+/* ---------- Main menu: a row of pills ----------
+   Phones: one row that swipes sideways (no hidden "hamburger" menu,
+   so every page stays visible). Bigger screens: the row wraps. */
+.site-nav {
+  background: var(--surface);
+  border-bottom: var(--border-w) solid var(--outline);
+}
+.site-nav ul {
+  display: flex;
+  gap: 8px;
+  margin: 0 auto;
+  padding-block: 10px;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none; /* the swipe still works; the bar just isn't drawn */
+}
+.site-nav ul::-webkit-scrollbar { display: none; }
+.site-nav li { flex: none; }
+.site-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 4px 14px;
+  border: var(--border-thin) solid var(--outline);
+  border-radius: 999px;
+  color: var(--fg);
+  font-weight: 800;
+  font-size: 0.95rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.site-nav a:hover { background: var(--sun-soft); color: var(--ink); }
+.site-nav a[aria-current="page"] {
+  background: var(--primary);
+  color: var(--on-primary);
+  box-shadow: 2px 2px 0 var(--shadow);
+}
+@media (min-width: 760px) {
+  .site-nav ul { flex-wrap: wrap; overflow: visible; }
+}
+
+/* Page content can be focused by the router and the skip link; no ring needed there. */
+#app:focus,
+h1:focus { outline: none; }
+
+/* When jumping to a mission, stop below the sticky header. */
+[id^="mission-"] { scroll-margin-top: 84px; }
 
 /* ---------- Main and footer ---------- */
 main .wrap { padding-block: 24px 64px; }

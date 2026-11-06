@@ -78,7 +78,7 @@
       {
         "title": { "en": "Safe by design", "es": "Seguro desde el diseño" },
         "body": { "en": "No accounts for children, very little personal information, and a co-facilitator in every session.", "es": "Los niños no tienen cuentas, pedimos muy poca información personal y hay un cofacilitador en cada sesión." },
-        "link": { "href": "#safety", "label": { "en": "Read how we keep children safe", "es": "Lee cómo cuidamos a los niños" } }
+        "link": { "href": "#/safety", "label": { "en": "Read how we keep children safe", "es": "Lee cómo cuidamos a los niños" } }
       }
     ],
     "needsTitle": { "en": "What your family needs", "es": "Lo que tu familia necesita" },

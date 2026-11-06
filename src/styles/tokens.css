@@ -3,8 +3,9 @@
    (var(--primary)), never raw colors, so light and dark mode only
    change this file.
 
-   The look: bright crayon colors, thick dark outlines and a solid
-   offset shadow, like stickers on a notebook.
+   The look: soft crayon colors, thin outlines and a small soft
+   shadow, like stickers on a notebook (softened after review:
+   the first version was too bright and the lines too thick).
 
    Rules that keep it readable:
    - Bright colors are BACKGROUNDS. Text on them is always dark ink.
@@ -28,17 +29,17 @@
   /* ---- Sticker style ---- */
   --ink: #2b2350;          /* text on any colored background, in both themes */
   --white: #ffffff;        /* stickers on colored backgrounds, in both themes */
-  --outline: #2b2350;      /* thick borders */
-  --shadow: #2b2350;       /* solid offset shadow */
+  --outline: #8a82a3;      /* thin borders: soft purple-gray */
+  --shadow: #e6d9c3;       /* soft offset shadow (paper tone) */
 
   /* ---- Header ---- */
-  --header-bg: #ffd23f;    /* sunshine yellow */
+  --header-bg: #ffe48a;    /* soft sunshine yellow */
 
   /* ---- Actions ---- */
-  --primary: #ff5d8f;      /* main buttons: crayon pink */
+  --primary: #ff9ab8;      /* main buttons: soft crayon pink */
   --on-primary: #2b2350;
   --link: #2b2350;
-  --link-line: #ff5d8f;    /* pink underline under links */
+  --link-line: #ff9ab8;    /* pink underline under links */
   --focus: #6d3fe0;        /* keyboard focus ring */
 
   /* ---- Word chips ---- */
@@ -47,22 +48,22 @@
   --chip-es: #6a3fc8;      /* Spanish translation in the chip */
 
   /* ---- Soft backgrounds ---- */
-  --sun-soft: #fff0b3;     /* callouts, steps */
-  --mint-soft: #c8f2da;    /* "yes" lists, teal tags */
+  --sun-soft: #fff6d6;     /* callouts, steps */
+  --mint-soft: #ddf5e7;    /* "yes" lists, teal tags */
 
   /* ---- Crayons (decoration: dots, Cami, stripes; never text) ---- */
-  --orange: #ff8a3d;
-  --pink: #ff5d8f;
-  --purple: #8b5cf6;
-  --blue: #2ea7e0;
-  --green: #3cc47c;
-  --yellow: #ffd23f;
+  --orange: #ffad7a;
+  --pink: #ff9ab8;
+  --purple: #b39cf7;
+  --blue: #7cc6ea;
+  --green: #7fd3a3;
+  --yellow: #ffe48a;
 
   /* ---- Mission colors: soft = card background (ink text on top) ---- */
-  --m1-soft: #ffd3b0;      /* Home: orange */
-  --m2-soft: #ffc9d9;      /* Health: pink */
-  --m3-soft: #dccfff;      /* Music: purple */
-  --m4-soft: #c4e9fa;      /* Stories: blue */
+  --m1-soft: #ffe6d3;      /* Home: orange */
+  --m2-soft: #ffe0e9;      /* Health: pink */
+  --m3-soft: #ebe4ff;      /* Music: purple */
+  --m4-soft: #dcf1fb;      /* Stories: blue */
 
   /* ---- Fonts ---- */
   --display: "Baloo 2", "Nunito", system-ui, sans-serif;
@@ -70,8 +71,9 @@
   --learn: "Andika", "Nunito", system-ui, sans-serif; /* English words */
 
   /* ---- Shapes ---- */
-  --border-w: 3px;
-  --lift: 4px;             /* how far the sticker shadow sits */
+  --border-w: 1.5px;        /* cards, buttons, header */
+  --border-thin: 1px;      /* tags, chips, pills */
+  --lift: 3px;             /* how far the sticker shadow sits */
   --radius-s: 10px;
   --radius-m: 14px;
   --radius-l: 20px;
@@ -79,7 +81,7 @@
   color-scheme: light;
 }
 
-/* Dark theme: deep navy-purple page, the same bright stickers on top.
+/* Dark theme: deep navy-purple page, the same soft stickers on top.
    Written twice on purpose: once for "follow the phone" and once for
    "family picked dark". */
 @media (prefers-color-scheme: dark) {
@@ -89,19 +91,19 @@
     --fg: #fff4e0;
     --muted: #c9c0e0;
     --hairline: #3a3263;
-    --outline: #7a6dbd;
+    --outline: #6a5fa6;
     --shadow: #0b0920;
-    --primary: #ff7aa6;
+    --primary: #f2a0bc;
     --link: #fff4e0;
-    --link-line: #ff7aa6;
-    --focus: #ffd23f;
+    --link-line: #f2a0bc;
+    --focus: #ffe48a;
     --chip-bg: #fff4e0;
-    --sun-soft: #ffe58a;
-    --mint-soft: #9fe8c0;
-    --m1-soft: #ffb98a;
-    --m2-soft: #ffa3bf;
-    --m3-soft: #c3aeff;
-    --m4-soft: #9ed8f5;
+    --sun-soft: #f1e2ae;
+    --mint-soft: #bfe5cf;
+    --m1-soft: #efcdb4;
+    --m2-soft: #eec3d0;
+    --m3-soft: #d3c8f2;
+    --m4-soft: #c0dfee;
     color-scheme: dark;
   }
 }
@@ -112,18 +114,18 @@
   --fg: #fff4e0;
   --muted: #c9c0e0;
   --hairline: #3a3263;
-  --outline: #7a6dbd;
+  --outline: #6a5fa6;
   --shadow: #0b0920;
-  --primary: #ff7aa6;
+  --primary: #f2a0bc;
   --link: #fff4e0;
-  --link-line: #ff7aa6;
-  --focus: #ffd23f;
+  --link-line: #f2a0bc;
+  --focus: #ffe48a;
   --chip-bg: #fff4e0;
-  --sun-soft: #ffe58a;
-  --mint-soft: #9fe8c0;
-  --m1-soft: #ffb98a;
-  --m2-soft: #ffa3bf;
-  --m3-soft: #c3aeff;
-  --m4-soft: #9ed8f5;
+  --sun-soft: #f1e2ae;
+  --mint-soft: #bfe5cf;
+  --m1-soft: #efcdb4;
+  --m2-soft: #eec3d0;
+  --m3-soft: #d3c8f2;
+  --m4-soft: #c0dfee;
   color-scheme: dark;
 }

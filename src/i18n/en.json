@@ -15,7 +15,8 @@
     "families": "Families",
     "partners": "Partners",
     "tools": "Tools",
-    "safety": "Safety"
+    "safety": "Safety",
+    "skip": "Skip to content"
   },
   "cami": {
     "alt": "Cami, the program's guide"
@@ -31,11 +32,11 @@
     "digital": "Digital moment",
     "none": "None",
     "allWords": "All program words",
-    "minutes": "{n} min"
+    "minutes": "{n} min",
+    "missionN": "Mission {n}",
+    "jumpLabel": "Jump to a mission"
   },
   "tools": {
-    "tool": "Tool",
-    "usedFor": "Used for",
     "whoUses": "Who uses it",
     "account": "Account",
     "accountNone": "None",
@@ -48,5 +49,10 @@
   },
   "app": {
     "loadError": "Something went wrong while loading the page. Please reload."
+  },
+  "notFound": {
+    "title": "Oops! This page got lost",
+    "body": "Cami looked everywhere but couldn’t find it. The link may be wrong or old.",
+    "home": "Go to the home page"
   }
 }

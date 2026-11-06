@@ -86,3 +86,27 @@ We compared three playful directions and chose **Crayon box**.
 - **Dark mode:** deep navy-purple page with the same bright stickers. Outlines
   become soft lavender (`#7a6dbd`) so the sticker edges stay visible.
 - **Checked:** 34 color pairs pass WCAG AA (`npm run check:contrast`).
+
+## 2026-11-06: Pages and navigation (Step 3)
+
+- **Hash routing** (`#/families`, `#/missions/3`): the server always sends the
+  same `index.html`, so it works on any static host with no server rules and
+  keeps working offline (Step 12). Old prototype links (`#families`) still work.
+- **Menu: a row of pills that swipes sideways on phones**, instead of a hidden
+  "hamburger" menu, so parents always see every page. It wraps on wide screens.
+- **Accessibility:** a "Skip to content" link; after each page change, focus
+  moves to the page title so screen readers start there; each page sets the
+  browser tab title; the open page's pill has `aria-current="page"`.
+- **Tools and other roles are cards, not tables,** because they read better on
+  a phone. The sessions tables stay tables (they scroll sideways inside their box).
+- **Mission colors reach the Partners page:** each professional role card uses
+  its mission's color.
+- **Not-found page** with Cami and a link home, instead of a blank screen.
+
+## Crayon box, softened (Step 3 review)
+
+- **Why:** after seeing it live, the colors felt too intense and the outlines too thick.
+- **Colors:** every crayon and mission tint moved toward pastel (for example pink `#ff5d8f` → `#ff9ab8`, header yellow `#ffd23f` → `#ffe48a`). Dark mode tints were desaturated the same way.
+- **Lines:** cards, buttons and header 3px → 1.5px; tags, chips and pills 2px → 1px (`--border-thin`). Outlines are soft purple-gray (`#8a82a3` light, `#6a5fa6` dark) instead of dark ink, still at least 3:1 against the page.
+- **Shadow:** smaller (3px) and paper-toned in light mode instead of a dark ink block.
+- All text pairs still pass WCAG AA (`npm run check:contrast`).

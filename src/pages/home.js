@@ -3,6 +3,8 @@
 
 import { h, fromTemplate } from '../lib/dom.js';
 import { pick, otherLang, t } from '../lib/i18n.js';
+import { href } from '../router.js';
+import { crayonDots } from './parts.js';
 import pages from '../content/pages.json';
 import program from '../content/program.json';
 
@@ -12,11 +14,6 @@ function cami() {
   return art;
 }
 
-/** Six crayon-colored dots: decoration only, hidden from screen readers. */
-export function crayonDots() {
-  return h('ul', { class: 'crayons', 'aria-hidden': 'true' }, [1, 2, 3, 4, 5, 6].map(() => h('li')));
-}
-
 function missionCard(mission) {
   const [from, to] = mission.weeks;
   return h(
@@ -24,7 +21,7 @@ function missionCard(mission) {
     // m1..m4 gives the card its mission color (see components.css).
     { class: `card m${mission.id}` },
     h('span', { class: 'tag' }, t('missions.weeks', { from, to })),
-    h('h3', {}, pick(mission.title)),
+    h('h3', {}, h('a', { class: 'card-link', href: href('missions', mission.id) }, pick(mission.title))),
     // The title in the other language, smaller: families see both.
     h('p', { class: 'es', lang: otherLang() }, pick(mission.title, otherLang())),
     h('p', {}, pick(mission.summary)),
@@ -33,10 +30,10 @@ function missionCard(mission) {
   );
 }
 
-export function renderHome() {
+export function homePage() {
   const home = pages.home;
 
-  return h(
+  const node = h(
     'section',
     { class: 'view' },
     h(
@@ -46,14 +43,14 @@ export function renderHome() {
         'div',
         {},
         h('p', { class: 'eyebrow' }, pick(home.eyebrow)),
-        h('h1', {}, pick(home.title)),
+        h('h1', { tabindex: '-1' }, pick(home.title)),
         crayonDots(),
         h('p', { class: 'lede' }, pick(home.lede)),
         h(
           'div',
           { class: 'btns' },
-          h('a', { class: 'btn primary', href: '#partners' }, pick(home.ctaPartners)),
-          h('a', { class: 'btn', href: '#families' }, pick(home.ctaFamilies)),
+          h('a', { class: 'btn primary', href: href('families') }, pick(home.ctaFamilies)),
+          h('a', { class: 'btn', href: href('partners') }, pick(home.ctaPartners)),
         ),
       ),
       cami(),
@@ -62,7 +59,7 @@ export function renderHome() {
     h('h2', {}, pick(home.missionsTitle)),
     h('p', {}, pick(home.missionsIntro)),
     h('div', { class: 'grid' }, program.missions.map(missionCard)),
-    h('p', { class: 'space-top' }, h('a', { href: '#missions' }, pick(home.seeAll))),
+    h('p', { class: 'space-top' }, h('a', { href: href('missions') }, pick(home.seeAll))),
 
     h('h2', {}, pick(home.glanceTitle)),
     h(
@@ -79,4 +76,7 @@ export function renderHome() {
       ),
     ),
   );
+
+  // Home uses just "Paso a Paso" as the browser tab title.
+  return { title: null, node };
 }

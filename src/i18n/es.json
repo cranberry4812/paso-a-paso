@@ -15,7 +15,8 @@
     "families": "Familias",
     "partners": "Colaboradores",
     "tools": "Herramientas",
-    "safety": "Seguridad"
+    "safety": "Seguridad",
+    "skip": "Saltar al contenido"
   },
   "cami": {
     "alt": "Cami, la guía del programa"
@@ -31,11 +32,11 @@
     "digital": "Momento digital",
     "none": "Ninguno",
     "allWords": "Todas las palabras del programa",
-    "minutes": "{n} min"
+    "minutes": "{n} min",
+    "missionN": "Misión {n}",
+    "jumpLabel": "Ir a una misión"
   },
   "tools": {
-    "tool": "Herramienta",
-    "usedFor": "Para qué la usamos",
     "whoUses": "Quién la usa",
     "account": "Cuenta",
     "accountNone": "Ninguna",
@@ -48,5 +49,10 @@
   },
   "app": {
     "loadError": "Algo salió mal al cargar la página. Por favor, vuelve a cargarla."
+  },
+  "notFound": {
+    "title": "¡Uy! Esta página se perdió",
+    "body": "Cami buscó por todas partes y no la encontró. Puede que el enlace esté mal o sea antiguo.",
+    "home": "Ir a la página de inicio"
   }
 }

@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="description" content="Paso a Paso: a free bilingual English and early-technology program for children ages 4 to 7. Un programa bilingüe y gratuito de inglés y tecnología para niños de 4 a 7 años." />
-    <meta name="theme-color" content="#ffd23f" />
+    <meta name="theme-color" content="#ffe48a" />
     <title>Paso a Paso</title>
     <!-- Runs first: applies the saved light/dark choice before anything is drawn. -->
     <script src="/theme-init.js"></script>
     <link rel="stylesheet" href="/src/styles/main.css" />
   </head>
   <body>
+    <!-- First thing a keyboard user reaches: jumps past the header and menu. -->
+    <a class="skip-link" href="#app" data-i18n="nav.skip">Skip to content</a>
+
     <header class="site">
       <div class="wrap">
-        <a class="brand" href="/">Paso a Paso</a>
+        <a class="brand" href="#/">Paso a Paso</a>
 
         <!-- Language switch: shows the OTHER language's name, written in that language. -->
         <button id="lang-toggle" class="lang-btn" type="button">
@@ -34,9 +37,15 @@
       </div>
     </header>
 
+    <!-- Main menu. src/main.js fills in the links in the current language.
+         On phones it is one row you can swipe sideways. -->
+    <nav class="site-nav" id="site-nav" data-i18n-aria-label="nav.label" aria-label="Main">
+      <ul class="wrap" id="site-nav-list"></ul>
+    </nav>
+
     <main>
       <!-- src/main.js draws the page content in here. -->
-      <div class="wrap" id="app">
+      <div class="wrap" id="app" tabindex="-1">
         <noscript>
           <p>Paso a Paso needs JavaScript turned on. / Paso a Paso necesita JavaScript activado.</p>
         </noscript>
@@ -51,21 +60,21 @@
     <template id="cami-template">
       <svg class="cami-art" viewBox="0 0 120 120" role="img" aria-label="Cami">
         <!-- pink sticker circle behind Cami -->
-        <circle cx="60" cy="61" r="55" fill="var(--pink)" stroke="var(--ink)" stroke-width="3" />
+        <circle cx="60" cy="61" r="55" fill="var(--pink)" stroke="var(--ink)" stroke-width="2" />
         <!-- antenna -->
-        <line x1="60" y1="31" x2="60" y2="19" stroke="var(--ink)" stroke-width="3" stroke-linecap="round" />
-        <circle cx="60" cy="16" r="6" fill="var(--green)" stroke="var(--ink)" stroke-width="3" />
+        <line x1="60" y1="31" x2="60" y2="19" stroke="var(--ink)" stroke-width="2" stroke-linecap="round" />
+        <circle cx="60" cy="16" r="6" fill="var(--green)" stroke="var(--ink)" stroke-width="2" />
         <!-- head -->
-        <rect x="32" y="30" width="56" height="44" rx="15" fill="var(--orange)" stroke="var(--ink)" stroke-width="3" />
-        <circle cx="48" cy="50" r="7" fill="var(--white)" stroke="var(--ink)" stroke-width="2" />
+        <rect x="32" y="30" width="56" height="44" rx="15" fill="var(--orange)" stroke="var(--ink)" stroke-width="2" />
+        <circle cx="48" cy="50" r="7" fill="var(--white)" stroke="var(--ink)" stroke-width="1.5" />
         <circle cx="72" cy="50" r="7" fill="var(--white)" stroke="var(--ink)" stroke-width="2" />
         <circle cx="49" cy="51" r="3" fill="var(--ink)" />
         <circle cx="73" cy="51" r="3" fill="var(--ink)" />
         <circle cx="40" cy="62" r="3.5" fill="var(--pink)" />
         <circle cx="80" cy="62" r="3.5" fill="var(--pink)" />
-        <path d="M51 62 Q60 70 69 62" stroke="var(--ink)" stroke-width="3" fill="none" stroke-linecap="round" />
+        <path d="M51 62 Q60 70 69 62" stroke="var(--ink)" stroke-width="2" fill="none" stroke-linecap="round" />
         <!-- body -->
-        <rect x="42" y="76" width="36" height="24" rx="9" fill="var(--blue)" stroke="var(--ink)" stroke-width="3" />
+        <rect x="42" y="76" width="36" height="24" rx="9" fill="var(--blue)" stroke="var(--ink)" stroke-width="2" />
         <circle cx="60" cy="88" r="4" fill="var(--yellow)" stroke="var(--ink)" stroke-width="2" />
       </svg>
     </template>

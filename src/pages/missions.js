@@ -3,6 +3,8 @@
 
 import { h } from '../lib/dom.js';
 import { pick, otherLang, t } from '../lib/i18n.js';
+import { href } from '../router.js';
+import { pageHeader } from './parts.js';
 import pages from '../content/pages.json';
 import program from '../content/program.json';
 
@@ -91,14 +93,25 @@ function missionBlock(mission) {
   );
 }
 
-export function renderMissions() {
-  const page = pages.missions;
+/** Four colored buttons that jump to each mission (handy on phones). */
+function missionJumps() {
   return h(
+    'nav',
+    { class: 'jumps', 'aria-label': t('missions.jumpLabel') },
+    program.missions.map((mission) =>
+      h('a', { class: `jump m${mission.id}`, href: href('missions', mission.id) }, pick(mission.title)),
+    ),
+  );
+}
+
+/** Missions page. param = mission number to scroll to ('#/missions/3'). */
+export function missionsPage(param) {
+  const page = pages.missions;
+  const node = h(
     'section',
-    { class: 'view', id: 'missions' },
-    h('p', { class: 'eyebrow' }, pick(page.eyebrow)),
-    h('h1', {}, pick(page.title)),
-    h('p', { class: 'lede' }, pick(page.lede)),
+    { class: 'view' },
+    pageHeader(page),
+    missionJumps(),
     h(
       'ol',
       { class: 'steps' },
@@ -107,4 +120,7 @@ export function renderMissions() {
     h('p', { class: 'es' }, pick(program.screenNote)),
     program.missions.map(missionBlock),
   );
+
+  const missionExists = program.missions.some((m) => String(m.id) === param);
+  return { title: pick(page.title), node, scrollTo: missionExists ? `mission-${param}` : null };
 }
