@@ -110,3 +110,20 @@ We compared three playful directions and chose **Crayon box**.
 - **Lines:** cards, buttons and header 3px → 1.5px; tags, chips and pills 2px → 1px (`--border-thin`). Outlines are soft purple-gray (`#8a82a3` light, `#6a5fa6` dark) instead of dark ink, still at least 3:1 against the page.
 - **Shadow:** smaller (3px) and paper-toned in light mode instead of a dark ink block.
 - All text pairs still pass WCAG AA (`npm run check:contrast`).
+
+## 2026-11-06: Going online (Step 4)
+
+- **Free `paso-a-paso.pages.dev` address first**; our own domain later. It
+  costs nothing and nothing yet needs email (Step 6 does).
+- **Cloudflare Pages, connected to GitHub:** every push to `main` builds and
+  publishes automatically. Build command is `npm run check`, so a failing
+  contrast or content check stops a broken deploy.
+- **Branch preview deployments off:** we only push `main`.
+- **Security headers in `public/_headers`** (explained in `docs/security.md`).
+  `npm run preview` applies the same file (`vite.config.js`), so a CSP mistake
+  shows up locally first.
+- **`noindex` until launch:** the draft stays out of search engines.
+- **Node 22** for Cloudflare's build (`.node-version`), the LTS our `engines` asks for.
+- **Favicon** (Cami's face, `public/favicon.svg`): found missing in the Step 3
+  review, every visit was asking for a file that didn't exist.
+- **Deferred until the domain:** WAF rules, DNSSEC, CAA (they need a Cloudflare "zone").

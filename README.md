@@ -21,7 +21,14 @@ Other commands:
 | Command | What it does |
 |---|---|
 | `npm run build` | Creates the final website in `dist/` |
-| `npm run preview` | Serves `dist/` locally so you can check the final build |
+| `npm run preview` | Serves `dist/` at http://localhost:4173 with the real security headers |
+| `npm run check` | Color contrast + content checks + build (Cloudflare runs this too) |
+
+## Publishing
+
+Every push to `main` is built and published by Cloudflare Pages at
+https://paso-a-paso.pages.dev (build command `npm run check`, output `dist`).
+Security headers live in `public/_headers`; see `docs/security.md`.
 
 ## Folders
 

@@ -1,0 +1,37 @@
+# Security headers for Cloudflare Pages.
+# Cloudflare reads this file and adds these lines to every response.
+# The same file is used by `npm run preview` (see vite.config.js), so you
+# can test the real rules on your computer before deploying.
+#
+# Format: a path, then indented "Header-Name: value" lines.
+# Full explanation of every line: docs/security.md
+
+/*
+  # Which sources the page may load from. Everything is self-hosted, so
+  # 'self' (our own address) is enough. Steps 5-7 add the Supabase address
+  # to connect-src.
+  Content-Security-Policy: default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  # Always use HTTPS, for one year, on this address and its subdomains.
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  # Never let another site put this page in a frame (stops "clickjacking").
+  # Older browsers read X-Frame-Options; newer ones read frame-ancestors above.
+  X-Frame-Options: DENY
+  # Don't guess file types; trust the type the server sends.
+  X-Content-Type-Options: nosniff
+  # When a family taps an outside link (ScratchJr...), don't tell that site
+  # which page they came from.
+  Referrer-Policy: no-referrer
+  # Turn off device features the app never uses.
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), bluetooth=(), serial=(), hid=(), midi=(), magnetometer=(), gyroscope=(), accelerometer=(), browsing-topics=()
+  # Keep this page in its own browser "process group", away from popups.
+  Cross-Origin-Opener-Policy: same-origin
+  # Other sites may not embed our files (fonts, scripts) in their pages.
+  Cross-Origin-Resource-Policy: same-origin
+  # TEMPORARY: keep the draft out of Google until the pilot launches.
+  # Delete this line when the site is ready to be found (Step 15).
+  X-Robots-Tag: noindex
+
+# Files in /assets/ have a fingerprint in their name (index-DMs7eB6q.js):
+# a new version gets a new name, so browsers can keep them for a year.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
