@@ -1,10 +1,7 @@
 // Entry point of the app. Vite loads this file from index.html.
-// For now it only proves that JavaScript runs. In later steps it will
-// start the router, the language switcher and the theme switcher.
+// Step 1: switches on the light/dark button.
+// Later steps add the router (Step 3), languages (Step 2) and sign-in (Step 7).
 
-const check = document.getElementById('js-check');
+import { initThemeToggle } from './lib/theme.js';
 
-// textContent (not innerHTML) is a habit we keep everywhere:
-// it treats text as text, so it can never run hidden code.
-check.textContent = 'JavaScript is working ✓';
-check.classList.add('ok');
+initThemeToggle(document.getElementById('theme-toggle'));

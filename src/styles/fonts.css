@@ -1,0 +1,30 @@
+/* Fonts are served from our own site, not from Google Fonts, so visitors'
+   IP addresses are never sent to a third party.
+   Both fonts use the SIL Open Font License 1.1 (free to self-host).
+   We load only the "latin" files: they cover English and Spanish
+   (á é í ó ú ü ñ ¿ ¡). Each file is a "variable" font: one file holds
+   every weight, so 3 files replace the 6 the prototype loaded. */
+
+@font-face {
+  font-family: "Fredoka";
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap; /* show text right away in a system font, swap when loaded */
+  src: url("@fontsource-variable/fredoka/files/fredoka-latin-wght-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url("@fontsource-variable/nunito/files/nunito-latin-wght-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: italic;
+  font-weight: 200 1000;
+  font-display: swap;
+  src: url("@fontsource-variable/nunito/files/nunito-latin-wght-italic.woff2") format("woff2");
+}

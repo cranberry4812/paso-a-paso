@@ -1,0 +1,70 @@
+/* Design tokens: every color and font lives here, in one place.
+   Components use the names (var(--accent)), never raw colors, so
+   light and dark mode only need to change this file.
+
+   How the theme is chosen:
+   1. If the family picked a theme, <html data-theme="light|dark"> is set.
+   2. Otherwise we follow the phone's setting (prefers-color-scheme).
+
+   Run `npm run check:contrast` after changing any color. */
+
+:root {
+  /* Light theme (default) */
+  --bg: #fbf8f2;          /* page background */
+  --surface: #ffffff;     /* cards, header */
+  --fg: #22303a;          /* main text */
+  --muted: #5b6b76;       /* secondary text */
+  --line: #e7e0d4;        /* borders */
+  --accent: #c2501c;      /* Cami orange: buttons, brand (prototype #c9541f, darkened a touch for readability) */
+  --accent-ink: #a8441a;  /* orange text on light backgrounds (readable) */
+  --accent-soft: #fde6d9; /* soft orange backgrounds */
+  --on-accent: #ffffff;   /* text on orange buttons */
+  --teal: #1f7a74;        /* second color: eyebrows, checks, focus ring */
+  --teal-ink: #1a6762;    /* teal text on soft teal backgrounds */
+  --teal-soft: #dcf0ed;   /* soft teal backgrounds */
+
+  --display: "Fredoka", "Nunito", system-ui, sans-serif;
+  --body: "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+
+  color-scheme: light;
+}
+
+/* Dark theme values. Written twice on purpose:
+   once for "follow the phone" and once for "family picked dark". */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #14191e;
+    --surface: #1d242b;
+    --fg: #eef1f3;
+    --muted: #a7b3bc;
+    --line: #2c353d;
+    --accent: #f08a57;
+    --accent-ink: #f4a47a;
+    --accent-soft: #3a2a20;
+    --on-accent: #14191e;
+    --teal: #6cc7bd;
+    --teal-ink: #7fd3c9;
+    --teal-soft: #193532;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #14191e;
+  --surface: #1d242b;
+  --fg: #eef1f3;
+  --muted: #a7b3bc;
+  --line: #2c353d;
+  --accent: #f08a57;
+  --accent-ink: #f4a47a;
+  --accent-soft: #3a2a20;
+  --on-accent: #14191e;
+  --teal: #6cc7bd;
+  --teal-ink: #7fd3c9;
+  --teal-soft: #193532;
+  color-scheme: dark;
+}

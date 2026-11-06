@@ -22,3 +22,16 @@ Every package we add is listed here with its reason.
 | Package | Why |
 |---|---|
 | `vite` (dev only) | Local dev server and production build |
+| `@fontsource-variable/fredoka`, `@fontsource-variable/nunito` | Self-hosted copies of the prototype's fonts (SIL Open Font License 1.1). Only the 3 "latin" files are used: about 110 KB in total |
+
+## 2026-11-06: Design (Step 1)
+
+- **Accent orange darkened** from `#c9541f` to `#c2501c`: white text on the
+  prototype's orange buttons was 4.40:1, below the 4.5:1 accessibility minimum.
+  Now 4.71:1. `npm run check:contrast` tests every color pair in both themes.
+- **Separate "ink" colors** (`--accent-ink`, `--teal-ink`) for text on light
+  backgrounds, so small orange and teal text stays readable.
+- **Theme choice** is saved only on the device (`localStorage`, key `pap-theme`),
+  never on the server. With no choice saved, the app follows the phone's setting.
+- **No inline scripts or styles**, so the Content-Security-Policy in Step 4
+  can forbid them.
