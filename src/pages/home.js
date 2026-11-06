@@ -12,11 +12,17 @@ function cami() {
   return art;
 }
 
+/** Six crayon-colored dots: decoration only, hidden from screen readers. */
+export function crayonDots() {
+  return h('ul', { class: 'crayons', 'aria-hidden': 'true' }, [1, 2, 3, 4, 5, 6].map(() => h('li')));
+}
+
 function missionCard(mission) {
   const [from, to] = mission.weeks;
   return h(
     'article',
-    { class: 'card' },
+    // m1..m4 gives the card its mission color (see components.css).
+    { class: `card m${mission.id}` },
     h('span', { class: 'tag' }, t('missions.weeks', { from, to })),
     h('h3', {}, pick(mission.title)),
     // The title in the other language, smaller: families see both.
@@ -41,6 +47,7 @@ export function renderHome() {
         {},
         h('p', { class: 'eyebrow' }, pick(home.eyebrow)),
         h('h1', {}, pick(home.title)),
+        crayonDots(),
         h('p', { class: 'lede' }, pick(home.lede)),
         h(
           'div',

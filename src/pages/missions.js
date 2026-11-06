@@ -26,7 +26,7 @@ function sessionRow(session) {
   return h(
     'tr',
     {},
-    h('td', {}, h('strong', {}, session.code)),
+    h('td', {}, h('span', { class: 'code-badge' }, session.code)),
     h('td', {}, pick(session.focus)),
     h('td', {}, wordsCell(session)),
     h('td', {}, pick(session.activity)),
@@ -34,54 +34,60 @@ function sessionRow(session) {
   );
 }
 
-function missionBlock(mission) {
+function missionHeader(mission) {
   const [from, to] = mission.weeks;
   return h(
-    'article',
-    { class: 'mission', id: `mission-${mission.id}` },
+    'header',
+    {},
     h(
-      'header',
+      'div',
       {},
-      h(
-        'div',
-        {},
-        h('span', { class: 'tag' }, t('missions.weeks', { from, to })),
-        h('h2', {}, pick(mission.title)),
-        h('p', { class: 'es', lang: otherLang() }, pick(mission.title, otherLang())),
-      ),
-      h('span', { class: 'tag teal' }, pick(mission.codesigner)),
+      h('span', { class: 'tag' }, t('missions.weeks', { from, to })),
+      h('h2', {}, pick(mission.title)),
+      h('p', { class: 'es', lang: otherLang() }, pick(mission.title, otherLang())),
     ),
+    h('span', { class: 'tag' }, pick(mission.codesigner)),
+  );
+}
+
+function missionMeta(mission) {
+  return h(
+    'div',
+    { class: 'meta' },
     h(
-      'div',
-      { class: 'meta' },
-      h(
-        'span',
-        {},
-        `${t('missions.powerPhrase')}: `,
-        h('strong', { lang: 'en' }, `"${mission.powerPhrase.en}"`),
-        ' ',
-        h('i', { lang: 'es' }, `/ "${mission.powerPhrase.es}"`),
-      ),
-      h('span', {}, `${t('missions.techSkill')}: `, h('strong', {}, pick(mission.techSkill))),
+      'span',
+      {},
+      `${t('missions.powerPhrase')}: `,
+      h('strong', { lang: 'en' }, `"${mission.powerPhrase.en}"`),
+      ' ',
+      h('i', { lang: 'es' }, `/ "${mission.powerPhrase.es}"`),
     ),
+    h('span', {}, `${t('missions.techSkill')}: `, h('strong', {}, pick(mission.techSkill))),
+  );
+}
+
+function sessionsTable(mission) {
+  const columns = ['session', 'focus', 'words', 'activity', 'digital'];
+  return h(
+    'div',
+    { class: 'table-wrap' },
     h(
-      'div',
-      { class: 'table-wrap' },
-      h(
-        'table',
-        {},
-        h(
-          'thead',
-          {},
-          h(
-            'tr',
-            {},
-            ['session', 'focus', 'words', 'activity', 'digital'].map((key) => h('th', { scope: 'col' }, t(`missions.${key}`))),
-          ),
-        ),
-        h('tbody', {}, mission.sessions.map(sessionRow)),
-      ),
+      'table',
+      {},
+      h('thead', {}, h('tr', {}, columns.map((key) => h('th', { scope: 'col' }, t(`missions.${key}`))))),
+      h('tbody', {}, mission.sessions.map(sessionRow)),
     ),
+  );
+}
+
+/** One mission: a colored header band, then the power phrase and the sessions table. */
+function missionBlock(mission) {
+  return h(
+    'article',
+    // m1..m4 colors the header band and the session badges.
+    { class: `mission m${mission.id}`, id: `mission-${mission.id}` },
+    missionHeader(mission),
+    h('div', { class: 'body' }, missionMeta(mission), sessionsTable(mission)),
   );
 }
 

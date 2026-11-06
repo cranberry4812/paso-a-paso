@@ -12,7 +12,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font: 16px/1.6 var(--body);
+  font: 17px/1.6 var(--body); /* a little bigger than usual: easier on small phones */
 }
 
 /* Fills the phone's notch area with the header color. */
@@ -22,11 +22,11 @@ body::before {
   inset: 0 0 auto;
   height: env(safe-area-inset-top, 0px);
   z-index: 10;
-  background: var(--surface);
+  background: var(--header-bg);
 }
 
 .wrap {
-  max-width: 920px;
+  max-width: 960px;
   margin: 0 auto;
   padding-left: max(16px, env(safe-area-inset-left, 0px));
   padding-right: max(16px, env(safe-area-inset-right, 0px));
@@ -35,34 +35,41 @@ body::before {
 /* ---------- Text ---------- */
 h1, h2, h3 {
   font-family: var(--display);
-  font-weight: 600;
-  line-height: 1.2;
+  font-weight: 800;
+  line-height: 1.1;
   text-wrap: balance;
-  margin: 0 0 0.5em;
+  margin: 0 0 0.4em;
 }
-h1 { font-size: clamp(2rem, 7vw, 3.2rem); }
-h2 { font-size: 1.5rem; margin-top: 2.2rem; }
-h3 { font-size: 1.15rem; }
+h1 { font-size: clamp(2.2rem, 9vw, 3.6rem); }
+h2 { font-size: 1.7rem; margin-top: 2.4rem; }
+h3 { font-size: 1.3rem; font-weight: 700; }
 p { max-width: 65ch; margin: 0 0 1em; }
 
-a { color: var(--accent-ink); font-weight: 700; }
-a:hover { text-decoration-thickness: 2px; }
+a {
+  color: var(--link);
+  font-weight: 800;
+  text-decoration-color: var(--link-line);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+a:hover { text-decoration-thickness: 5px; }
 
 .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.78rem;
+  display: inline-block;
+  font-size: 0.8rem;
   font-weight: 800;
-  color: var(--teal-ink);
-  margin-bottom: 0.4em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 0.5em;
 }
 .es { color: var(--muted); font-style: italic; }
 .lede { font-size: 1.15rem; color: var(--muted); }
 
 /* Keyboard focus: always visible, never removed. */
 :focus-visible {
-  outline: 3px solid var(--teal);
-  outline-offset: 2px;
+  outline: 4px solid var(--focus);
+  outline-offset: 3px;
 }
 
 /* Browsers only hide HTML elements with [hidden]; this also hides SVG drawings. */
@@ -78,37 +85,40 @@ a:hover { text-decoration-thickness: 2px; }
   white-space: nowrap;
 }
 
-/* ---------- Header ---------- */
+/* ---------- Header: sunshine yellow with a thick ink line ---------- */
 header.site {
   position: sticky;
   top: env(safe-area-inset-top, 0px);
   z-index: 5;
-  background: var(--surface);
-  border-bottom: 1px solid var(--line);
+  background: var(--header-bg);
+  color: var(--ink);
+  border-bottom: var(--border-w) solid var(--ink);
 }
 header.site .wrap {
   display: flex;
   align-items: center;
-  gap: 12px;
-  min-height: 56px;
+  gap: 10px;
+  min-height: 60px;
   padding-block: 8px;
 }
 .brand {
   font-family: var(--display);
-  font-weight: 600;
-  font-size: 1.3rem;
-  color: var(--accent-ink);
+  font-weight: 800;
+  font-size: 1.45rem;
+  line-height: 1;
+  color: var(--ink);
   text-decoration: none;
   margin-right: auto; /* pushes the buttons to the right */
 }
 
 /* ---------- Main and footer ---------- */
-main .wrap { padding-block: 24px 56px; }
+main .wrap { padding-block: 24px 64px; }
 
 footer.site {
-  border-top: 1px solid var(--line);
+  border-top: var(--border-w) solid var(--outline);
+  background: var(--surface);
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 }
 footer.site .wrap { padding-block: 18px 28px; }
 
@@ -116,12 +126,12 @@ footer.site .wrap { padding-block: 18px 28px; }
 @media (prefers-reduced-motion: no-preference) {
   .view { animation: fade 0.25s ease both; }
   @keyframes fade {
-    from { opacity: 0.4; transform: translateY(4px); }
+    from { opacity: 0.4; transform: translateY(6px); }
     to { opacity: 1; transform: none; }
   }
 }
 
 @media (min-width: 700px) {
-  main .wrap { padding-block: 32px 64px; }
-  h2 { font-size: 1.6rem; }
+  main .wrap { padding-block: 36px 72px; }
+  h2 { font-size: 2rem; }
 }

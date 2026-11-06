@@ -17,7 +17,9 @@ function readTokens(block) {
 
 const lightBlock = css.match(/:root\s*\{([\s\S]*?)\}/)[1];
 const darkBlock = css.match(/:root\[data-theme="dark"\]\s*\{([\s\S]*?)\}/)[1];
-const themes = { light: readTokens(lightBlock), dark: readTokens(darkBlock) };
+// Dark mode only lists the colors it changes; everything else comes from light.
+const light = readTokens(lightBlock);
+const themes = { light, dark: { ...light, ...readTokens(darkBlock) } };
 
 // Relative luminance, as defined by WCAG 2.
 function luminance(hex) {
@@ -33,29 +35,33 @@ function contrast(a, b) {
   return (hi + 0.05) / (lo + 0.05);
 }
 
-// [text color, background color, minimum ratio, where it's used]
+// [text color, background color, minimum ratio, where it is used, only in this theme (optional)]
 const pairs = [
-  ['fg', 'bg', 4.5, 'body text'],
-  ['fg', 'surface', 4.5, 'text in cards'],
-  ['muted', 'bg', 4.5, 'secondary text'],
-  ['muted', 'surface', 4.5, 'secondary text in cards'],
-  ['accent-ink', 'surface', 4.5, 'outline buttons, brand, links'],
-  ['accent-ink', 'bg', 4.5, 'links on page'],
-  ['on-accent', 'accent', 4.5, 'primary button text'],
-  ['accent-ink', 'accent-soft', 4.5, 'orange tags, power phrases'],
-  ['fg', 'accent-soft', 4.5, 'word chips'],
-  ['muted', 'accent-soft', 4.5, 'Spanish word in chips'],
-  ['teal-ink', 'bg', 4.5, 'eyebrow labels'],
-  ['teal-ink', 'teal-soft', 4.5, 'teal tags, step numbers'],
-  ['fg', 'teal-soft', 4.5, 'callouts, steps'],
-  ['teal', 'bg', 3, 'focus ring, check marks'],
-  ['accent', 'surface', 3, 'button borders'],
+  ["fg", "bg", 4.5, "body text"],
+  ["fg", "surface", 4.5, "text in white cards"],
+  ["muted", "bg", 4.5, "secondary text"],
+  ["muted", "surface", 4.5, "secondary text in cards"],
+  ["link", "bg", 4.5, "links"],
+  ["ink", "header-bg", 4.5, "header text on yellow"],
+  ["on-primary", "primary", 4.5, "main button text"],
+  ["ink", "surface", 4.5, "outline buttons", "light"],
+  ["chip-fg", "chip-bg", 4.5, "English word in chips"],
+  ["chip-es", "chip-bg", 4.5, "Spanish word in chips"],
+  ["ink", "sun-soft", 4.5, "callouts and steps"],
+  ["ink", "mint-soft", 4.5, "mint tags"],
+  ["ink", "m1-soft", 4.5, "Mission 1 (Home) cards"],
+  ["ink", "m2-soft", 4.5, "Mission 2 (Health) cards"],
+  ["ink", "m3-soft", 4.5, "Mission 3 (Music) cards"],
+  ["ink", "m4-soft", 4.5, "Mission 4 (Stories) cards"],
+  ["focus", "bg", 3, "keyboard focus ring"],
+  ["outline", "bg", 3, "sticker outlines"],
 ];
 
 let failures = 0;
 for (const [name, t] of Object.entries(themes)) {
   console.log(`\n${name.toUpperCase()} THEME`);
-  for (const [fg, bg, min, use] of pairs) {
+  for (const [fg, bg, min, use, only] of pairs) {
+    if (only && only !== name) continue;
     const ratio = contrast(t[fg], t[bg]);
     const ok = ratio >= min;
     if (!ok) failures++;

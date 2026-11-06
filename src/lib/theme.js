@@ -26,8 +26,8 @@ function save(theme) {
 function updateThemeColor() {
   const meta = document.querySelector('meta[name="theme-color"]');
   if (!meta) return;
-  const surface = getComputedStyle(root).getPropertyValue('--surface').trim();
-  meta.setAttribute('content', surface);
+  const headerColor = getComputedStyle(root).getPropertyValue('--header-bg').trim();
+  meta.setAttribute('content', headerColor);
 }
 
 function updateButton(button) {

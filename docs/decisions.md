@@ -22,7 +22,11 @@ Every package we add is listed here with its reason.
 | Package | Why |
 |---|---|
 | `vite` (dev only) | Local dev server and production build |
-| `@fontsource-variable/fredoka`, `@fontsource-variable/nunito` | Self-hosted copies of the prototype's fonts (SIL Open Font License 1.1). Only the 3 "latin" files are used: about 110 KB in total |
+| `@fontsource-variable/baloo-2` | Headings in the Crayon box design (SIL OFL 1.1). Replaced Fredoka |
+| `@fontsource-variable/nunito` | Body text (SIL OFL 1.1) |
+| `@fontsource/andika` | English words and picture cards: designed for beginning readers (SIL OFL 1.1) |
+
+Only the "latin" font files are used: 6 files, about 175 KB in total.
 
 ## 2026-11-06: Design (Step 1)
 
@@ -61,3 +65,24 @@ Every package we add is listed here with its reason.
   still lists "Google Sites" for platform pages (this platform replaces it), and
   the Safety page says the consent form is "kept by the partner organization"
   (online consent replaces it in Step 7).
+
+## 2026-11-06: "Crayon box" design (replaces the Step 1 look)
+
+The Step 1 design (beige page, one orange accent, thin borders) looked generic.
+We compared three playful directions and chose **Crayon box**.
+
+- **Sticker style:** thick ink outlines (3px), round corners and a solid offset
+  shadow. Buttons press down when tapped.
+- **Six crayon colors** for decoration (Cami, dots, stripes): orange, pink,
+  purple, blue, green, yellow. **Text is never placed in a bright crayon color**;
+  bright areas use the soft versions with dark ink text on top.
+- **Mission colors**, used everywhere a mission appears (cards, header bands,
+  session badges; later progress and picture cards):
+  1 Home = orange, 2 Health = pink, 3 Music = purple, 4 Stories = blue.
+  In code: add class `m1`..`m4`; inside it `var(--m)` is that mission's color.
+- **Fonts:** Baloo 2 (headings), Nunito (text), Andika (English words), chosen
+  because its letters match how children learn to write them.
+- **Sunshine-yellow header** in both themes; the phone's top bar matches it.
+- **Dark mode:** deep navy-purple page with the same bright stickers. Outlines
+  become soft lavender (`#7a6dbd`) so the sticker edges stay visible.
+- **Checked:** 34 color pairs pass WCAG AA (`npm run check:contrast`).

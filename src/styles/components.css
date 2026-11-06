@@ -1,193 +1,289 @@
-/* Reusable pieces from the prototype: hero, buttons, cards, tags,
-   word chips, steps, tables, missions, check lists, timeline, callout.
+/* Reusable pieces in the "Crayon box" style: thick ink outlines, a solid
+   offset shadow (the "sticker"), round corners and mission colors.
    Every color comes from tokens.css. */
+
+/* ---------- Mission colors ----------
+   Add class m1..m4 to anything that belongs to a mission; inside it,
+   var(--m) is that mission's color. */
+.m1 { --m: var(--m1-soft); --m-dot: var(--orange); }
+.m2 { --m: var(--m2-soft); --m-dot: var(--pink); }
+.m3 { --m: var(--m3-soft); --m-dot: var(--purple); }
+.m4 { --m: var(--m4-soft); --m-dot: var(--blue); }
 
 /* ---------- Hero with Cami ---------- */
 .hero {
   display: grid;
-  gap: 16px;
+  gap: 8px;
   align-items: center;
 }
 .hero > div { min-width: 0; }
-.cami-art { width: 110px; height: 110px; order: -1; } /* Cami on top on phones */
+.cami-art { width: 120px; height: 120px; order: -1; } /* Cami on top on phones */
 
-@media (min-width: 600px) {
-  .hero { grid-template-columns: 1fr auto; gap: 24px; }
-  .cami-art { width: 150px; height: 150px; order: 0; }
+@media (min-width: 640px) {
+  .hero { grid-template-columns: 1fr auto; gap: 28px; }
+  .cami-art { width: 190px; height: 190px; order: 0; }
 }
 
-/* ---------- Buttons ---------- */
-.btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 8px; }
+/* A row of crayon dots: a small playful divider. */
+.crayons {
+  display: flex;
+  gap: 8px;
+  margin: 4px 0 14px;
+  padding: 0;
+  list-style: none;
+}
+.crayons li {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--outline);
+}
+.crayons li:nth-child(1) { background: var(--orange); }
+.crayons li:nth-child(2) { background: var(--pink); }
+.crayons li:nth-child(3) { background: var(--purple); }
+.crayons li:nth-child(4) { background: var(--blue); }
+.crayons li:nth-child(5) { background: var(--green); }
+.crayons li:nth-child(6) { background: var(--yellow); }
+
+/* ---------- Buttons: press down when tapped ---------- */
+.btns { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; }
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 44px; /* big enough for small fingers and big thumbs */
-  padding: 8px 16px;
-  border-radius: 10px;
-  border: 2px solid var(--accent);
-  background: transparent;
-  color: var(--accent-ink);
-  font: 800 1rem/1.2 var(--body);
+  min-height: 48px; /* big enough for small fingers and big thumbs */
+  padding: 10px 20px;
+  border: var(--border-w) solid var(--outline);
+  border-radius: var(--radius-m);
+  box-shadow: 3px 3px 0 var(--shadow);
+  background: var(--surface);
+  color: var(--fg);
+  font: 800 1.02rem/1.2 var(--body);
   text-decoration: none;
   cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
 }
-.btn:hover { background: var(--accent-soft); }
-.btn.primary { background: var(--accent); color: var(--on-accent); }
-.btn.primary:hover { filter: brightness(1.08); }
+.btn.primary { background: var(--primary); color: var(--on-primary); }
+.btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--shadow); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 0 0 0 var(--shadow); }
 
-/* Round icon button, used by the theme switch. */
+/* Header buttons: language pill and theme circle. */
+.lang-btn,
+.icon-btn {
+  min-height: 44px;
+  border: 2px solid var(--ink);
+  background: var(--white);
+  color: var(--ink);
+  box-shadow: 2px 2px 0 var(--ink);
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.lang-btn {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font: 800 0.95rem/1 var(--body);
+}
 .icon-btn {
   display: inline-grid;
   place-items: center;
   width: 44px;
-  height: 44px;
   border-radius: 50%;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--fg);
-  cursor: pointer;
 }
-.icon-btn:hover { background: var(--accent-soft); }
 .icon-btn svg { width: 22px; height: 22px; }
-
-/* Language switch: a pill with the other language's name. */
-.lang-btn {
-  min-height: 44px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  color: var(--fg);
-  font: 800 0.92rem/1 var(--body);
-  cursor: pointer;
-}
-.lang-btn:hover { background: var(--accent-soft); }
+.lang-btn:active,
+.icon-btn:active { transform: translate(2px, 2px); box-shadow: 0 0 0 var(--ink); }
 
 /* ---------- Cards and grids ---------- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  gap: 16px;
+  gap: 20px;
 }
 .card {
   background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 14px;
+  border: var(--border-w) solid var(--outline);
+  border-radius: var(--radius-l);
+  box-shadow: var(--lift) var(--lift) 0 var(--shadow);
   padding: 18px;
   min-width: 0;
 }
-.card h3 { margin-bottom: 0.3em; }
+.card h3 { margin-bottom: 0.2em; }
 .card p:last-child { margin-bottom: 0; }
+
+/* A mission card takes its mission's color; text switches to ink. */
+.card.m1, .card.m2, .card.m3, .card.m4 { background: var(--m); color: var(--ink); }
+.card.m1 .es, .card.m2 .es, .card.m3 .es, .card.m4 .es { color: var(--ink); }
 
 /* ---------- Tags and phrases ---------- */
 .tag {
   display: inline-block;
-  background: var(--accent-soft);
-  color: var(--accent-ink);
+  background: var(--surface);
+  color: var(--fg);
+  border: 2px solid var(--outline);
   border-radius: 999px;
-  padding: 2px 10px;
-  font-size: 0.78rem;
+  padding: 1px 12px;
+  font-size: 0.8rem;
   font-weight: 800;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
-.tag.teal { background: var(--teal-soft); color: var(--teal-ink); }
-.phrase { font-weight: 800; color: var(--accent-ink); }
+.m1 .tag, .m2 .tag, .m3 .tag, .m4 .tag { background: var(--white); color: var(--ink); border-color: var(--ink); }
+.tag.mint { background: var(--mint-soft); color: var(--ink); }
+.phrase { font-family: var(--learn); font-weight: 700; font-size: 1.1rem; }
 
-/* ---------- Five steps of every session ---------- */
+/* ---------- Five steps of every session: numbered stickers ---------- */
 .steps {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
   padding: 0;
-  margin: 12px 0;
+  margin: 14px 0;
   list-style: none;
   counter-reset: s;
 }
 .steps li {
-  background: var(--teal-soft);
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--sun-soft);
+  color: var(--ink);
+  border: 2px solid var(--outline);
+  border-radius: 999px;
+  padding: 4px 14px 4px 4px;
+  font-size: 0.95rem;
+  font-weight: 700;
   counter-increment: s;
 }
-.steps li::before { content: counter(s) ". "; font-weight: 800; color: var(--teal-ink); }
+.steps li::before {
+  content: counter(s);
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--ink);
+  color: var(--sun-soft);
+  font-weight: 800;
+}
 
-/* ---------- Bilingual word chips ---------- */
-.words { display: flex; flex-wrap: wrap; gap: 4px; }
+/* ---------- Bilingual word chips (Andika: easy for new readers) ---------- */
+.words { display: flex; flex-wrap: wrap; gap: 6px; }
 .word {
-  background: var(--accent-soft);
-  border-radius: 6px;
-  padding: 1px 7px;
-  font-size: 0.85rem;
+  background: var(--chip-bg);
+  color: var(--chip-fg);
+  border: 2px solid var(--outline);
+  border-radius: var(--radius-s);
+  padding: 1px 9px;
+  font-family: var(--learn);
+  font-weight: 700;
+  font-size: 0.95rem;
   white-space: nowrap;
 }
-.word i { color: var(--muted); }
+.word i { color: var(--chip-es); font-weight: 400; }
 
 /* ---------- Tables (scroll sideways inside their box on phones) ---------- */
 .table-wrap {
   overflow-x: auto;
-  border: 1px solid var(--line);
-  border-radius: var(--radius-m);
   background: var(--surface);
+  border: var(--border-w) solid var(--outline);
+  border-radius: var(--radius-m);
   margin: 12px 0 8px;
 }
-table { width: 100%; border-collapse: collapse; font-size: 0.93rem; min-width: 560px; }
-th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
-tr:last-child td { border-bottom: 0; }
-th { color: var(--muted); font-weight: 800; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; min-width: 600px; }
+th, td { text-align: left; padding: 12px; border-bottom: 2px solid var(--hairline); vertical-align: top; }
+tr:last-child td, tr:last-child th { border-bottom: 0; }
+thead th {
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+tbody th { font-weight: 800; }
+table.glance { min-width: 0; }
+.code-badge {
+  display: inline-grid;
+  place-items: center;
+  min-width: 42px;
+  padding: 2px 8px;
+  background: var(--m, var(--sun-soft));
+  color: var(--ink);
+  border: 2px solid var(--outline);
+  border-radius: var(--radius-s);
+  font-weight: 800;
+}
 
-/* ---------- Mission block ---------- */
+/* ---------- Mission block: a colored band on top, table below ---------- */
 .mission {
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: var(--border-w) solid var(--outline);
   border-radius: var(--radius-l);
-  padding: 18px;
-  margin-top: 20px;
+  box-shadow: var(--lift) var(--lift) 0 var(--shadow);
+  margin-top: 28px;
+  overflow: hidden;
 }
-.mission header { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; align-items: baseline; }
-.mission header > div { min-width: 0; }
-.mission h2 { margin-top: 0; }
-.mission .meta { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 0.92rem; color: var(--muted); margin: 4px 0 8px; }
+.mission > header {
+  background: var(--m);
+  color: var(--ink);
+  border-bottom: var(--border-w) solid var(--outline);
+  padding: 16px 18px 12px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: flex-start;
+}
+.mission > header > div { min-width: 0; }
+.mission h2 { margin: 0; }
+.mission > header .es { color: var(--ink); margin: 2px 0 0; }
+.mission .body { padding: 14px 18px 18px; }
+.mission .meta { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.95rem; color: var(--muted); margin: 0 0 8px; }
 .mission .meta strong { color: var(--fg); }
+.mission .table-wrap { border-width: 2px; }
 
 /* ---------- Check lists ---------- */
 ul.checks { padding-left: 0; list-style: none; margin: 0 0 1em; }
-ul.checks li { padding-left: 26px; position: relative; margin-bottom: 6px; max-width: 65ch; }
+ul.checks li { padding-left: 30px; position: relative; margin-bottom: 8px; max-width: 65ch; }
 ul.checks li::before {
   content: "";
   position: absolute;
-  left: 4px;
-  top: 0.5em;
-  width: 10px;
-  height: 10px;
-  border-radius: 3px;
-  background: var(--teal);
+  left: 0;
+  top: 0.3em;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--outline);
+  background: var(--green);
 }
-ul.no li::before { background: var(--accent); border-radius: 50%; }
+ul.no li::before { background: var(--pink); border-radius: 4px; }
 
-.noacct { color: var(--teal-ink); font-weight: 800; }
-.needacct { color: var(--accent-ink); font-weight: 800; }
+.noacct, .needacct { font-weight: 800; }
 
 /* ---------- Timeline ---------- */
-.timeline { display: grid; gap: 10px; margin: 12px 0; }
+.timeline { display: grid; gap: 12px; margin: 12px 0; }
 .tl {
   display: grid;
   gap: 2px;
   background: var(--surface);
-  border: 1px solid var(--line);
+  border: 2px solid var(--outline);
   border-radius: var(--radius-m);
   padding: 12px 14px;
 }
-.tl b { color: var(--teal-ink); font-variant-numeric: tabular-nums; }
+.tl b { font-family: var(--display); font-size: 1.1rem; font-variant-numeric: tabular-nums; }
 .tl div { min-width: 0; }
 @media (min-width: 480px) {
-  .tl { grid-template-columns: 110px 1fr; gap: 12px; }
+  .tl { grid-template-columns: 120px 1fr; gap: 12px; }
 }
 
-/* ---------- Spacing helper (instead of inline style="") ---------- */
-.space-top { margin-top: 20px; }
-
 /* ---------- Callout ---------- */
-.callout { background: var(--teal-soft); border-radius: 14px; padding: 16px 18px; margin: 16px 0; }
+.callout {
+  background: var(--sun-soft);
+  color: var(--ink);
+  border: var(--border-w) solid var(--outline);
+  border-radius: var(--radius-l);
+  padding: 16px 18px;
+  margin: 20px 0;
+}
 .callout p:last-child { margin: 0; }
+
+/* ---------- Spacing helper (instead of inline style="") ---------- */
+.space-top { margin-top: 24px; }
