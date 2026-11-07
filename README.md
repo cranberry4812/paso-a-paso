@@ -27,7 +27,7 @@ Other commands:
 ## Publishing
 
 Every push to `main` is built and published by Cloudflare Pages at
-https://paso-a-paso.pages.dev (build command `npm run check`, output `dist`).
+https://paso-a-paso-eqb.pages.dev (build command `npm run check`, output `dist`).
 Security headers live in `public/_headers`; see `docs/security.md`.
 
 ## Folders

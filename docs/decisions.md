@@ -113,8 +113,10 @@ We compared three playful directions and chose **Crayon box**.
 
 ## 2026-11-06: Going online (Step 4)
 
-- **Free `paso-a-paso.pages.dev` address first**; our own domain later. It
+- **Free `paso-a-paso-eqb.pages.dev` address first**; our own domain later. It
   costs nothing and nothing yet needs email (Step 6 does).
+  (`paso-a-paso.pages.dev` was already taken by an unrelated site, so
+  Cloudflare added `-eqb`. Never share the address without `-eqb`.)
 - **Cloudflare Pages, connected to GitHub:** every push to `main` builds and
   publishes automatically. Build command is `npm run check`, so a failing
   contrast or content check stops a broken deploy.
