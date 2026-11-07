@@ -23,6 +23,7 @@
   },
   "missions": {
     "weeks": "Semanas {from}–{to}",
+    "examples": "Por ejemplo: {list}",
     "powerPhrase": "Frase clave",
     "techSkill": "Habilidad tecnológica",
     "session": "Sesión",

@@ -5,13 +5,16 @@ import { pick, t } from '../lib/i18n.js';
 import { pageHeader, checkList, stepList, callout } from './parts.js';
 import pages from '../content/pages.json';
 
-// Each professional role belongs to one mission, so its card uses that mission's color.
+// Each volunteer role belongs to one mission's field (building, health,
+// music, stories), so its card uses that mission's color. The examples
+// show which jobs fit; any job in the field counts.
 function roleCard(role) {
   return h(
     'article',
     { class: `card m${role.mission}` },
     h('span', { class: 'tag' }, t('missions.missionN', { n: role.mission })),
     h('h3', {}, pick(role.title)),
+    h('p', { class: 'es' }, t('missions.examples', { list: pick(role.examples) })),
     h('p', {}, h('strong', {}, pick(role.time))),
     checkList(role.tasks),
   );

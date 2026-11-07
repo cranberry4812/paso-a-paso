@@ -77,7 +77,7 @@
       "summary": { "en": "Shapes, building parts and sizes.", "es": "Figuras, partes de una casa y tamaños." },
       "powerPhrase": { "en": "This is my house.", "es": "Esta es mi casa." },
       "techSkill": { "en": "following steps in order", "es": "seguir pasos en orden" },
-      "codesigner": { "en": "Co-designed by an architect", "es": "Codiseñada con un arquitecto" },
+      "codesigner": { "en": "Designed with a home & building volunteer", "es": "Diseñada con una persona voluntaria de la construcción" },
       "sessions": [
         {
           "code": "1A", "order": 1,
@@ -161,11 +161,11 @@
     {
       "id": 2,
       "weeks": [4, 6],
-      "title": { "en": "Cami checks her friends", "es": "Cami revisa a sus amigos" },
+      "title": { "en": "Cami takes care of her friends", "es": "Cami cuida a sus amigos" },
       "summary": { "en": "Body parts, feelings and healthy habits.", "es": "Partes del cuerpo, emociones y hábitos saludables." },
       "powerPhrase": { "en": "I am healthy.", "es": "Estoy sano." },
       "techSkill": { "en": "sorting and categories", "es": "clasificar en categorías" },
-      "codesigner": { "en": "Co-designed by a doctor", "es": "Codiseñada con un médico" },
+      "codesigner": { "en": "Designed with a health volunteer", "es": "Diseñada con una persona voluntaria de la salud" },
       "sessions": [
         {
           "code": "4A", "order": 7,
@@ -256,7 +256,7 @@
       "summary": { "en": "Rhythm, counting, patterns and a first song.", "es": "Ritmo, conteo, patrones y una primera canción." },
       "powerPhrase": { "en": "Listen to the beat.", "es": "Escucha el ritmo." },
       "techSkill": { "en": "patterns and loops", "es": "patrones y repeticiones" },
-      "codesigner": { "en": "Co-designed by a music producer", "es": "Codiseñada con un productor musical" },
+      "codesigner": { "en": "Designed with a music volunteer", "es": "Diseñada con una persona voluntaria de la música" },
       "sessions": [
         {
           "code": "7A", "order": 13,
@@ -341,7 +341,7 @@
       "summary": { "en": "Characters, feelings and story order.", "es": "Personajes, emociones y el orden de un cuento." },
       "powerPhrase": { "en": "First, then, next, the end.", "es": "Primero, luego, después, el final." },
       "techSkill": { "en": "cause and effect, event order", "es": "causa y efecto, orden de los sucesos" },
-      "codesigner": { "en": "Co-designed by a storyteller", "es": "Codiseñada con un cuentacuentos" },
+      "codesigner": { "en": "Designed with a story volunteer", "es": "Diseñada con una persona voluntaria de los cuentos" },
       "sessions": [
         {
           "code": "10A", "order": 19,

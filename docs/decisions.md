@@ -129,3 +129,39 @@ We compared three playful directions and chose **Crayon box**.
 - **Favicon** (Cami's face, `public/favicon.svg`): found missing in the Step 3
   review, every visit was asking for a file that didn't exist.
 - **Deferred until the domain:** WAF rules, DNSSEC, CAA (they need a Cloudflare "zone").
+
+## 2026-11-07: Volunteer roles by field, independent and free (content review)
+
+- **Roles are fields, not job titles:** Home & building, Health, Music and
+  Story volunteers, each with example jobs ("For example: nurse, doctor,
+  dentist…"). Children still meet real jobs; recruiting is open to many
+  professions; mission cards no longer claim a specific professional who
+  hasn't signed up yet.
+- **Independent:** organized by parents and educators, no organization behind
+  it. Community partners (schools, libraries) are optional, only spread the
+  word, and **never receive family data**. Families sign up and give consent
+  on this site, so there is one place to protect and one place to delete.
+- **Free** (was "free or very low cost").
+- **Wording:** "parent or guardian"; more gender-neutral Spanish
+  ("persona voluntaria", "te damos la bienvenida"). Safety page now lists
+  the parent-account data we collect.
+- **No photos, videos or recordings** of children or sessions, ever (not even
+  with consent): nothing to store, protect or ask consent for.
+- Mission 2 renamed **"Cami takes care of her friends" / "Cami cuida a sus amigos"**
+  (was "checks her friends", which sounded clinical).
+
+## 2026-11-07: Free now, ready to charge later
+
+- **Everything stays free.** Paid live classes ($20 per mission; QR in
+  Bolivia, PayPal elsewhere) were considered and postponed until the free
+  pilot shows whether families want them.
+- **Free lessons are parent-led:** each session gets steps a parent can
+  follow at home, plus **audio for every English word** (pronunciation help).
+- **Designed so charging can be added later without rebuilding:**
+  - Progress belongs to the child; live classes would be a separate
+    "enrollment" in a "group", added as new tables, not changes to old ones.
+  - Video-call links will only ever be shown through the database's security
+    rules, so they can later be limited to enrolled families.
+  - If payments come: PayPal's hosted checkout page (no PayPal scripts on our
+    site), manual "mark paid" first, automation only at about 30+ payments a month.
+  - Open question for then: who legally receives the money.

@@ -3,15 +3,15 @@
     "eyebrow": { "en": "English + early technology · Ages 4 to 7 · Online", "es": "Inglés + tecnología temprana · De 4 a 7 años · En línea" },
     "title": { "en": "Learn step by step, with Cami", "es": "Aprende paso a paso, con Cami" },
     "lede": {
-      "en": "Paso a Paso is a free online program for Spanish-speaking children. In 12 weeks, they learn English words, build early technology skills, and discover what architects, doctors, musicians and storytellers do.",
-      "es": "Paso a Paso es un programa gratuito en línea para niños hispanohablantes. En 12 semanas aprenden palabras en inglés, desarrollan sus primeras habilidades tecnológicas y descubren lo que hacen los arquitectos, médicos, músicos y cuentacuentos."
+      "en": "Paso a Paso is a free online program for Spanish-speaking children, organized by parents and educators. In 12 weeks, children learn English words, build early technology skills, and meet people who build homes, care for our health, make music and tell stories.",
+      "es": "Paso a Paso es un programa gratuito en línea para niños hispanohablantes, organizado por madres, padres y educadores. En 12 semanas aprenden palabras en inglés, desarrollan sus primeras habilidades tecnológicas y conocen a personas que construyen casas, cuidan la salud, hacen música y cuentan historias."
     },
     "ctaPartners": { "en": "Become a partner", "es": "Colabora con nosotros" },
     "ctaFamilies": { "en": "Why it's good for families", "es": "Por qué es bueno para tu familia" },
     "missionsTitle": { "en": "Four missions, one guide", "es": "Cuatro misiones, una guía" },
     "missionsIntro": {
-      "en": "Cami goes on a new mission every three weeks. Each mission is designed with a volunteer professional and ends with a small showcase for families.",
-      "es": "Cami empieza una nueva misión cada tres semanas. Cada misión se diseña con un profesional voluntario y termina con una pequeña muestra para las familias."
+      "en": "Cami goes on a new mission every three weeks. Each mission is designed with a volunteer who works in that field and ends with a small showcase for families.",
+      "es": "Cami empieza una nueva misión cada tres semanas. Cada misión se diseña con una persona voluntaria que trabaja en ese campo y termina con una pequeña muestra para las familias."
     },
     "seeAll": { "en": "See every session and word list →", "es": "Ver todas las sesiones y palabras →" },
     "glanceTitle": { "en": "At a glance", "es": "De un vistazo" },
@@ -19,9 +19,10 @@
       { "label": { "en": "Ages", "es": "Edades" }, "value": { "en": "4 to 7 (a track for ages 8 to 10 is planned later)", "es": "De 4 a 7 años (más adelante habrá un grupo de 8 a 10 años)" } },
       { "label": { "en": "Length", "es": "Duración" }, "value": { "en": "12 weeks, 24 sessions", "es": "12 semanas, 24 sesiones" } },
       { "label": { "en": "Sessions", "es": "Sesiones" }, "value": { "en": "2 per week, 25 minutes each, live online", "es": "2 por semana, de 25 minutos cada una, en vivo y en línea" } },
-      { "label": { "en": "Group size", "es": "Tamaño del grupo" }, "value": { "en": "12 to 15 children, 2 co-facilitators", "es": "De 12 a 15 niños, 2 cofacilitadores" } },
+      { "label": { "en": "Group size", "es": "Tamaño del grupo" }, "value": { "en": "12 to 15 children, 2 co-facilitators", "es": "De 12 a 15 niños, 2 personas cofacilitadoras" } },
       { "label": { "en": "Languages", "es": "Idiomas" }, "value": { "en": "English leads, Spanish supports. The ratio adapts to each group.", "es": "El inglés guía y el español apoya. La proporción se adapta a cada grupo." } },
-      { "label": { "en": "Cost to families", "es": "Costo para las familias" }, "value": { "en": "Free or very low cost", "es": "Gratis o de muy bajo costo" } },
+      { "label": { "en": "Cost to families", "es": "Costo para las familias" }, "value": { "en": "Free", "es": "Gratis" } },
+      { "label": { "en": "Organized by", "es": "Organizado por" }, "value": { "en": "Parents and educators, independently. No company or organization behind it.", "es": "Madres, padres y educadores, de forma independiente. Sin una empresa ni organización detrás." } },
       { "label": { "en": "Status", "es": "Estado" }, "value": { "en": "Draft. Recruiting partners for a pilot in January 2027.", "es": "Borrador. Buscamos colaboradores para un piloto en enero de 2027." } }
     ]
   },
@@ -60,8 +61,8 @@
         "body": { "en": "Hands-on activities come first. Screen activities last 5 minutes at most per session, always with an adult nearby.", "es": "Primero van las actividades con las manos. Las actividades con pantalla duran 5 minutos como máximo por sesión, siempre con un adulto cerca." }
       },
       {
-        "title": { "en": "Designed by professionals", "es": "Diseñado por profesionales" },
-        "body": { "en": "Architects, doctors, music producers and storytellers help design each mission, so children see real jobs they could have one day.", "es": "Arquitectos, médicos, productores musicales y cuentacuentos ayudan a diseñar cada misión, para que los niños conozcan trabajos reales que podrían tener algún día." }
+        "title": { "en": "Real jobs, real people", "es": "Trabajos reales, personas reales" },
+        "body": { "en": "People who work in building, health, music and stories volunteer to design each mission, so children discover jobs they could do one day.", "es": "Personas que trabajan en la construcción, la salud, la música y los cuentos diseñan cada misión como voluntarias, para que los niños descubran oficios y profesiones que podrían tener algún día." }
       },
       {
         "title": { "en": "Made for little attention spans", "es": "Pensado para la atención de los más pequeños" },
@@ -86,7 +87,7 @@
       { "en": "A phone, tablet or computer with a camera and internet connection", "es": "Un teléfono, tableta o computadora con cámara y conexión a internet" },
       { "en": "An adult nearby during sessions (required for ages 4 and 5)", "es": "Un adulto cerca durante las sesiones (obligatorio para niños de 4 y 5 años)" },
       { "en": "Blocks or small boxes, paper and crayons", "es": "Bloques o cajitas, papel y crayones" },
-      { "en": "A stuffed animal (for the doctor mission)", "es": "Un peluche (para la misión del médico)" },
+      { "en": "A stuffed animal (for the health mission)", "es": "Un peluche (para la misión de la salud)" },
       { "en": "A pot, box or plastic container to use as a drum", "es": "Una olla, caja o recipiente de plástico para usar como tambor" }
     ],
     "weakInternet": {
@@ -96,11 +97,11 @@
   },
 
   "partners": {
-    "eyebrow": { "en": "Volunteer partners", "es": "Colaboradores voluntarios" },
+    "eyebrow": { "en": "Volunteer partners", "es": "Colaboración voluntaria" },
     "title": { "en": "Help design a mission", "es": "Ayúdanos a diseñar una misión" },
     "lede": {
-      "en": "We're looking for volunteer professionals to co-design the activities for one mission. You don't need to teach or appear on camera, though you're welcome to join a session live.",
-      "es": "Buscamos profesionales voluntarios para codiseñar las actividades de una misión. No necesitas enseñar ni aparecer en cámara, aunque eres bienvenido a unirte a una sesión en vivo."
+      "en": "We're looking for volunteers who work in building, health, music or stories to co-design the activities for one mission. Any job in the field counts. You don't need to teach or appear on camera, though you're welcome to join a session live.",
+      "es": "Buscamos personas voluntarias que trabajen en la construcción, la salud, la música o los cuentos para codiseñar las actividades de una misión. Cualquier trabajo del campo cuenta. No necesitas enseñar ni aparecer en cámara, aunque te damos la bienvenida si quieres unirte a una sesión en vivo."
     },
     "howTitle": { "en": "How co-design works", "es": "Cómo funciona el codiseño" },
     "how": [
@@ -114,7 +115,8 @@
     "roles": [
       {
         "mission": 1,
-        "title": { "en": "Architect", "es": "Arquitecto/a" },
+        "title": { "en": "Home & building volunteer", "es": "Voluntariado de construcción" },
+        "examples": { "en": "Architect, builder, carpenter, engineer, interior designer", "es": "Arquitectura, construcción, carpintería, ingeniería, diseño de interiores" },
         "time": { "en": "About 6–8 hours per term", "es": "Unas 6–8 horas por periodo" },
         "tasks": [
           { "en": "Building activities and step cards", "es": "Actividades de construcción y tarjetas de pasos" },
@@ -125,7 +127,8 @@
       },
       {
         "mission": 2,
-        "title": { "en": "Doctor", "es": "Médico/a" },
+        "title": { "en": "Health volunteer", "es": "Voluntariado de salud" },
+        "examples": { "en": "Nurse, doctor, dentist, pediatric therapist, health educator", "es": "Enfermería, medicina, odontología, terapia infantil, educación para la salud" },
         "time": { "en": "About 5–6 hours per term", "es": "Unas 5–6 horas por periodo" },
         "tasks": [
           { "en": "Healthy-habits content for ages 4 to 7", "es": "Contenido sobre hábitos saludables para niños de 4 a 7 años" },
@@ -136,7 +139,8 @@
       },
       {
         "mission": 3,
-        "title": { "en": "Music producer", "es": "Productor/a musical" },
+        "title": { "en": "Music volunteer", "es": "Voluntariado de música" },
+        "examples": { "en": "Musician, music teacher, producer, choir leader", "es": "Música, docencia musical, producción, dirección de coro" },
         "time": { "en": "About 6–8 hours per term", "es": "Unas 6–8 horas por periodo" },
         "tasks": [
           { "en": "Rhythm and pattern games", "es": "Juegos de ritmo y patrones" },
@@ -146,7 +150,8 @@
       },
       {
         "mission": 4,
-        "title": { "en": "Storyteller", "es": "Cuentacuentos" },
+        "title": { "en": "Story volunteer", "es": "Voluntariado de cuentos" },
+        "examples": { "en": "Author, librarian, illustrator, teacher, storyteller", "es": "Escritura, bibliotecas, ilustración, docencia, narración oral" },
         "time": { "en": "About 4–6 hours per term", "es": "Unas 4–6 horas por periodo" },
         "tasks": [
           { "en": "6–8 story cards in English and Spanish", "es": "6–8 tarjetas de cuento en inglés y en español" },
@@ -169,12 +174,12 @@
       },
       {
         "role": { "en": "Family liaison", "es": "Enlace con las familias" },
-        "does": { "en": "A parent who gathers feedback and helps with showcases", "es": "Una madre o padre que reúne opiniones y ayuda con las muestras" },
+        "does": { "en": "A parent or guardian in the program who gathers feedback and helps with showcases", "es": "Una madre, padre o tutor del programa que reúne opiniones y ayuda con las muestras" },
         "time": { "en": "About 1 hour a week", "es": "Aproximadamente 1 hora por semana" }
       },
       {
-        "role": { "en": "Partner organization", "es": "Organización aliada" },
-        "does": { "en": "A school, library or nonprofit that invites families and keeps the contact list", "es": "Una escuela, biblioteca u organización sin fines de lucro que invita a las familias y guarda la lista de contactos" },
+        "role": { "en": "Community partner (optional)", "es": "Aliado comunitario (opcional)" },
+        "does": { "en": "A school, library or community group that tells families about the program. Families sign up here themselves; partners never receive family data.", "es": "Una escuela, biblioteca o grupo comunitario que da a conocer el programa. Las familias se inscriben aquí directamente; los aliados nunca reciben datos de las familias." },
         "time": { "en": "Set together", "es": "Se acuerda en conjunto" }
       }
     ],
@@ -195,7 +200,7 @@
     ],
     "contact": {
       "title": { "en": "Interested?", "es": "¿Te interesa?" },
-      "body": { "en": "Contact the program lead directly to receive the design brief for your field. Volunteers who work directly with children complete a background check before sessions start.", "es": "Escribe directamente a la coordinación del programa para recibir la guía de diseño de tu área. Los voluntarios que trabajan directamente con niños pasan una verificación de antecedentes antes de empezar." }
+      "body": { "en": "Contact the program lead directly to receive the design brief for your field. Volunteers who work directly with children complete a background check before sessions start.", "es": "Escribe directamente a la coordinación del programa para recibir la guía de diseño de tu área. Las personas voluntarias que trabajan directamente con niños pasan una verificación de antecedentes antes de empezar." }
     }
   },
 
@@ -220,9 +225,10 @@
         "title": { "en": "In every session", "es": "En cada sesión" },
         "style": "checks",
         "items": [
-          { "en": "A co-facilitator is always present", "es": "Siempre hay un cofacilitador presente" },
+          { "en": "A co-facilitator is always present", "es": "Siempre hay una persona cofacilitadora presente" },
           { "en": "No private one-on-one contact between adults and children", "es": "Ningún contacto privado a solas entre adultos y niños" },
           { "en": "Waiting room and passcode on every call", "es": "Sala de espera y contraseña en cada videollamada" },
+          { "en": "Sessions are never recorded", "es": "Las sesiones nunca se graban" },
           { "en": "An adult nearby for children ages 4 and 5", "es": "Un adulto cerca para los niños de 4 y 5 años" },
           { "en": "Partners never contact children directly", "es": "Los colaboradores nunca contactan directamente a los niños" }
         ]
@@ -233,7 +239,9 @@
         "items": [
           { "en": "Child's first name or nickname", "es": "El nombre de pila o apodo del niño" },
           { "en": "Age group (4–5 or 6–7)", "es": "Grupo de edad (4–5 o 6–7)" },
-          { "en": "A signed consent form, kept by the partner organization", "es": "Un formulario de consentimiento firmado, que guarda la organización aliada" }
+          { "en": "Optional notes, only if you choose to add them", "es": "Notas opcionales, solo si decides agregarlas" },
+          { "en": "For your parent account: your first name, email, country and language", "es": "Para tu cuenta: tu nombre de pila, correo, país e idioma" },
+          { "en": "Your consent, which you give yourself when you sign up", "es": "Tu consentimiento, que das tú al inscribirte" }
         ]
       },
       {
@@ -243,13 +251,13 @@
           { "en": "Last names, birthdates or addresses", "es": "Apellidos, fechas de nacimiento ni direcciones" },
           { "en": "School names", "es": "Nombres de escuelas" },
           { "en": "Children's accounts on any tool", "es": "Cuentas de niños en ninguna herramienta" },
-          { "en": "Photos or recordings without written consent", "es": "Fotos ni grabaciones sin consentimiento por escrito" }
+          { "en": "Photos, videos or recordings of children or sessions", "es": "Fotos, videos ni grabaciones de los niños ni de las sesiones" }
         ]
       }
     ],
     "callout": {
       "en": "Everyone who works directly with children completes a background check. A written safeguarding policy, reviewed by a child development professional, will be shared with families before the first session.",
-      "es": "Todas las personas que trabajan directamente con niños pasan una verificación de antecedentes. Antes de la primera sesión compartiremos con las familias una política de protección infantil por escrito, revisada por un profesional en desarrollo infantil."
+      "es": "Todas las personas que trabajan directamente con niños pasan una verificación de antecedentes. Antes de la primera sesión compartiremos con las familias una política de protección infantil por escrito, revisada por una persona experta en desarrollo infantil."
     }
   }
 }
